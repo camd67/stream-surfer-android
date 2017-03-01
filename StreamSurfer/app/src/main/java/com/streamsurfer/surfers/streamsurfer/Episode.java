@@ -12,12 +12,12 @@ public class Episode {
     private String title;
     private int episodeNumber;
     private int seasonNumber;
-    private Date releaseDate;
+    private String releaseDate;
     private int length;
     private List<String> synonyms;
     private String thumbnail;
 
-    public Episode(String title, int episodeNumber, int seasonNumber, Date releaseDate,
+    public Episode(String title, int episodeNumber, int seasonNumber, String releaseDate,
                    int length, List<String> synonyms, String thumbnail) {
         this.title = title;
         this.episodeNumber = episodeNumber;
@@ -40,7 +40,7 @@ public class Episode {
         return seasonNumber;
     }
 
-    public Date getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
