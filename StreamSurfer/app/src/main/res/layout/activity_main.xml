@@ -10,8 +10,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.streamsurfer.surfers.streamsurfer.MainActivity">
 
-    <TextView
+
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="StreamSurfing time!" />
+        android:inputType= "textAutoComplete"
+        android:hint="Search"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/search_input" />
 </RelativeLayout>
