@@ -1,0 +1,174 @@
+[
+    {
+        "title": "Show title 1",
+        "synonyms": [
+            "ST1"
+        ],
+        "thumbnail": "res/sh/show_title_1.png",
+        "genre": [
+            "action",
+            "comedy"
+        ],
+        "tags": [
+            "TV"
+        ],
+        "services": [
+            {
+                "name": "Netflix",
+                "baseUrl": "https://netflix.com",
+                "icon": "res/ser/netflix.png"
+            }
+        ],
+        "episodes": [
+            {
+                "title": "Ep 1",
+                "episodeNumber": 1,
+                "seasonNumber": 1,
+                "releaseDate": "2016-12-10",
+                "length": 600,
+                "synonyms": [
+                    "The first"
+                ],
+                "thumbnail": "res/ep/Ep_1.png"
+            },
+            {
+                "title": "Ep 2",
+                "episodeNumber": 2,
+                "seasonNumber": 1,
+                "releaseDate": "2017-1-10",
+                "length": 500,
+                "synonyms": [
+                    "The second",
+                    "Season finale"
+                ],
+                "thumbnail": "res/ep/Ep_2.png"
+            },
+            {
+                "title": "Ep 1",
+                "episodeNumber": 1,
+                "seasonNumber": 2,
+                "releaseDate": "2017-2-10",
+                "length": 600,
+                "synonyms": [
+                    "The first"
+                ],
+                "thumbnail": "res/ep/Ep_1_S_2.png"
+            }
+        ]
+    },
+    {
+        "title": "Movie 1",
+        "synonyms": [
+            "The only movie we have"
+        ],
+        "thumbnail": "res/sh/movie_1.png",
+        "genre": [
+            "action",
+            "comedy",
+            "romance"
+        ],
+        "tags": [
+            "movie"
+        ],
+        "services": [
+            {
+                "name": "Netflix",
+                "baseUrl": "https://netflix.com",
+                "icon": "res/ser/netflix.png"
+            }
+        ],
+        "episodes": [
+            {
+                "title": "Movie title",
+                "episodeNumber": 1,
+                "seasonNumber": 1,
+                "releaseDate": "2016-12-20",
+                "length": 18000,
+                "synonyms": [
+                    "The first movie",
+                    "Everyone’s fave"
+                ],
+                "thumbnail": "res/ep/mov_1.png"
+            }
+        ]
+    },
+    {
+        "title": "Super Funny",
+        "synonyms": [
+            "SF"
+        ],
+        "thumbnail": "res/sh/movie_2.png",
+        "genre": [
+            "comedy",
+            "historical"
+        ],
+        "tags": [
+            "movie"
+        ],
+        "services": [
+            {
+                "name": "Hulu",
+                "baseUrl": "https://hulu.com",
+                "icon": "res/ser/hulu.png"
+            }
+        ],
+        "episodes": [
+            {
+                "title": "Super Funny",
+                "episodeNumber": 1,
+                "seasonNumber": 1,
+                "releaseDate": "2015-12-20",
+                "length": 16000,
+                "synonyms": [
+                    "SF"
+                ],
+                "thumbnail": "res/ep/mov_2.png"
+            }
+        ]
+    },
+    {
+        "title": "Naruto",
+        "synonyms": [],
+        "synopsis": "Guided by the spirit demon within him, orphaned Naruto learns to harness his powers as a ninja in this anime adventure series.",
+        "thumbnail": "res/sh/naruto.png",
+        "genre": [
+            "comedy",
+            "historical"
+        ],
+        "tags": [
+            "TV"
+        ],
+        "services": [
+            {
+                "name": "Hulu",
+                "baseUrl": "https://hulu.com",
+                "icon": "res/ser/hulu.png"
+            },
+            {
+                "name": "Netflix",
+                "baseUrl": "https://www.netflix.com",
+                "icon": "res/ser/netflix.png"
+            }
+        ],
+        "episodes": [
+            {
+                "title": "Enter: Naruto Uzumaki!",
+                "episodeNumber": 1,
+                "seasonNumber": 1,
+                "releaseDate": "2015-12-20",
+                "length": 1416,
+                "synonyms": [],
+                "thumbnail": "res/ep/naruto_s1_e1.png"
+            },
+            {
+                "title": "My name is Konohamaru!",
+                "episodeNumber": 2,
+                "seasonNumber": 1,
+                "releaseDate": "2015-12-20",
+                "length": 1416,
+                "synonyms": [],
+                "thumbnail": "res/ep/naruto_s1_e2.png"
+            }
+        ]
+    }
+]
