@@ -1,7 +1,0 @@
-#Wed Mar 01 21:20:40 PST 2017
-base.0=C\:\\Users\\Jack\\Documents\\UW\\INFO448\\stream-surfer-android\\NavigationDrawer\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_0febab37707a5d252b22fb6f11383fc3277ed225
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=C\:\\Users\\Jack\\Documents\\UW\\INFO448\\stream-surfer-android\\NavigationDrawer\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_0e28c2c29495355e42ed03c4eb356197a0001932\\classes.dex
-base.1=C\:\\Users\\Jack\\Documents\\UW\\INFO448\\stream-surfer-android\\NavigationDrawer\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_0e28c2c29495355e42ed03c4eb356197a0001932
-file.0=C\:\\Users\\Jack\\Documents\\UW\\INFO448\\stream-surfer-android\\NavigationDrawer\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_0febab37707a5d252b22fb6f11383fc3277ed225\\classes.dex
