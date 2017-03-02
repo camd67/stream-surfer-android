@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2342966ebe192ddaabae429ab3adb397865f44b7">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_0febab37707a5d252b22fb6f11383fc3277ed225\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.0.0_0281a92d5db7788cf6fb147f4d1bcb4ff587000a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.0.0_49b6309b9acfd6a8712745f2b1812eeff1cd2d4d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c87270a9d828773c296fadde93e939c8190a6b1b">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-24.0.0_36e5ef90109c3e297ae679587a872fe820da3578\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.0.0_0125d2d11040f96c40002033706bb8d27e1b69d8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.0.0_80588040d05e313e017b5230e5f915d7e583324d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.0.0_d81127a540409393fb01865a5cccf1aa48fa22c5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_895ae77070bcb9f0a5cfa1591997173d5034a114\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c796fe45a2bdd2f10231de96ae899baf08352718">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_0e28c2c29495355e42ed03c4eb356197a0001932\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.0.0_ccadb72925c653b22d2d11f278f359f170112580\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8dd49930e4f9dde1a42d37e362b9fea8b1b69c0d">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-24.0.0_bf2098e5c1b1308276edfb3ec64ea84fce113134\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="61fd2644ca586288d0e733377d12b5f6da18c4ca">
+        <dex dex="C:\Users\Jack\Documents\UW\INFO448\stream-surfer-android\NavigationDrawer\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_f7b0c14acd90637fa2e89c5865fa0218afc1f605\classes.dex" />
+    </item>
+
+</items>

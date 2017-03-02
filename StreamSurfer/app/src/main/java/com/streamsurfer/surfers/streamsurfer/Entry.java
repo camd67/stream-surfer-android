@@ -1,5 +1,6 @@
 package com.streamsurfer.surfers.streamsurfer;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by Jack on 3/1/2017.
  */
 
-public class Entry {
+public class Entry implements Serializable {
     private String title;
     private List<String> synonyms;
     private String synopsis;
