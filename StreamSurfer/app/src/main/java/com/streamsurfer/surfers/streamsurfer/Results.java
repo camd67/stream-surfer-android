@@ -19,9 +19,9 @@ public class Results extends AppCompatActivity {
         List<Entry> results = entries.getResults();
         int size = results.size();
         String[] titlesLeft = new String[size / 2 + size % 2];
-        String[] titlesRight = new String[size / 2];
+        String[] titlesRight = new String[size / 2 + size % 2];
         int[] imagesLeft = new int[size / 2 + size % 2];
-        int[] imagesRight = new int[size / 2];
+        int[] imagesRight = new int[size / 2 + size % 2];
         boolean even = false;
         for (int i = 0; i < results.size(); i ++) {
             if (even) {
@@ -32,11 +32,9 @@ public class Results extends AppCompatActivity {
                 imagesLeft[i / 2] = R.mipmap.ic_launcher;
             }
             even = !even;
-        }
-        ListView resultListLeft = (ListView) findViewById(R.id.result_list_left);
-        resultListLeft.setAdapter(new ResultsAdapter(Results.this, titlesLeft, imagesLeft));
 
-        ListView resultListRight = (ListView) findViewById(R.id.result_list_right);
-        resultListRight.setAdapter(new ResultsAdapter(Results.this, titlesRight, imagesRight));
+        }
+        ListView resultList = (ListView) findViewById(R.id.result_list);
+        resultList.setAdapter(new ResultsAdapter(Results.this, titlesLeft, titlesRight, imagesLeft, imagesRight));
     }
 }
