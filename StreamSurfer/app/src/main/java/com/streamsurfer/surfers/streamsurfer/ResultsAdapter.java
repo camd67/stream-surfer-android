@@ -1,6 +1,7 @@
 package com.streamsurfer.surfers.streamsurfer;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,5 +71,4 @@ public class ResultsAdapter extends BaseAdapter {
         }
         return rowView;
     }
-
 }

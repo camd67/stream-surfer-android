@@ -18,7 +18,8 @@ import java.util.Map;
 
 public class Entries extends android.app.Application {
     private Map<String, Entry> entryMap = new HashMap<>();
-    private List<Entry> results = new ArrayList<>();
+    private List<Entry> results;
+    private Entry selected;
     private static Entries instance = null;
 
     @Override
@@ -50,6 +51,17 @@ public class Entries extends android.app.Application {
         for (Entry e : results) {
             this.results.add(e);
         }
+    }
+
+    public Entry getSelected() {
+        return new Entry(selected.getTitle(), selected.getSynonyms(), selected.getSynopsis(),
+                selected.getThumbnail(), selected.getGenres(), selected.getTags(), selected.getServices(),
+                selected.getEpisodes());
+    }
+
+    public void setSelected(Entry e) {
+        selected = new Entry(e.getTitle(), e.getSynonyms(), e.getSynopsis(), e.getThumbnail(), e.getGenres(),
+                e.getTags(), e.getServices(), e.getEpisodes());
     }
 
     private void createEntries(File file) {
