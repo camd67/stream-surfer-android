@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Results extends AppCompatActivity {
 
-    public Entries entries = Entries.getInstance();
+    private Entries entries = Entries.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +31,11 @@ public class Results extends AppCompatActivity {
         for (int i = 0; i < results.size(); i ++) {
             if (even) {
                 titlesRight[i / 2] = results.get(i).getTitle();
+                //replace
                 imagesRight[i / 2] = R.mipmap.ic_launcher;
             } else {
                 titlesLeft[i / 2] = results.get(i).getTitle();
+                //replace
                 imagesLeft[i / 2] = R.mipmap.ic_launcher;
             }
             even = !even;

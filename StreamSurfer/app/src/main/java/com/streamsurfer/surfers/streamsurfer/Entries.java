@@ -1,5 +1,6 @@
 package com.streamsurfer.surfers.streamsurfer;
 
+import android.os.Environment;
 import android.util.JsonReader;
 import android.util.JsonToken;
 import android.util.Log;
@@ -37,7 +38,8 @@ public class Entries extends android.app.Application {
     public Map<String, Entry> getEntries() {
         if (entryMap.isEmpty()) {
             //switch to surfer instead of qd3
-            createEntries(new File("/storage/emulated/0/Android/data/edu.washington.jackw117.quizdroid3/files/data.json"));
+            File directory = Environment.getExternalStorageDirectory();
+            createEntries(new File(directory + "/data.json"));
         }
         return new HashMap<>(entryMap);
     }

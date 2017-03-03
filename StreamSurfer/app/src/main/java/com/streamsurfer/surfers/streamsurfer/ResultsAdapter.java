@@ -1,7 +1,6 @@
 package com.streamsurfer.surfers.streamsurfer;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,27 +32,23 @@ public class ResultsAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        // TODO Auto-generated method stub
         return resultLeft.length;
     }
 
     @Override
     public Object getItem(int position) {
-        // TODO Auto-generated method stub
         return position;
     }
 
     @Override
     public long getItemId(int position) {
-        // TODO Auto-generated method stub
         return position;
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
         View rowView;
-        rowView = inflater.inflate(R.layout.program_list, null);
+        rowView = inflater.inflate(R.layout.results_list, null);
         TextView tvl = (TextView) rowView.findViewById(R.id.title_left);
         TextView tvr = (TextView) rowView.findViewById(R.id.title_right);
         ImageView imgl = (ImageView) rowView.findViewById(R.id.image_left);

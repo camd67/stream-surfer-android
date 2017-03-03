@@ -27,7 +27,7 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity {
 
     public static final String RESULTS = "results";
-    public Entries entries = Entries.getInstance();
+    private Entries entries = Entries.getInstance();
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
