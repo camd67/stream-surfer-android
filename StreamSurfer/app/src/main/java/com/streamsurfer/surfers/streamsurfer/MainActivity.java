@@ -17,9 +17,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -27,6 +24,7 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity {
 
     public static final String RESULTS = "results";
+    public static final String OPTION = "option";
     private Entries entries = Entries.getInstance();
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -42,9 +40,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         final Map<String, Entry> entryList = entries.getEntries();
+        final Map<String, List<Entry>> genreMap = entries.getGenreMap();
         final Set<String> entryKeys = entryList.keySet();
 
-        //not done with drawer... moved on because it was taking too long
+        //todo not done with drawer... moved on because it was taking too long
         final DrawerLayout layout = (DrawerLayout) findViewById(R.id.activity_main);
         final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,                  /* host Activity */
@@ -88,16 +87,14 @@ public class MainActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<Entry> results = new ArrayList<>();
                 String search = searchInput.getText().toString().toLowerCase();
-                for (String s : entryKeys) {
-                    if (s.contains(search)) {
-                        results.add(entryList.get(s));
-                    }
-                }
-                entries.setResults(results);
                 Intent activity = new Intent(MainActivity.this, Results.class);
-                startActivity(activity);
+                activity.putExtra(RESULTS, search);
+
+                Intent test = new Intent(MainActivity.this, Browse.class);
+                test.putExtra(OPTION, "genres");
+                startActivity(test);
+                //startActivity(activity);
             }
         });
     }

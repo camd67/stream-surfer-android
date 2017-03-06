@@ -17,7 +17,8 @@ public class Details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        Entry selected = entries.getSelected();
+        String selectedString = getIntent().getStringExtra(Results.SELECTED);
+        Entry selected = entries.getEntries().get(selectedString);
         List<Service> serviceList = selected.getServices();
         int serviceSize = serviceList.size();
         String[] services = new String[serviceSize];

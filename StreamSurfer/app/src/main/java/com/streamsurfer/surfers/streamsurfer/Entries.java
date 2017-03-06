@@ -19,8 +19,8 @@ import java.util.Map;
 
 public class Entries extends android.app.Application {
     private Map<String, Entry> entryMap = new HashMap<>();
-    private List<Entry> results;
-    private Entry selected;
+    private Map<String, List<Entry>> genreMap = new HashMap<>();
+    private List<String> genreList = new ArrayList<>();
     private static Entries instance = null;
 
     @Override
@@ -37,33 +37,22 @@ public class Entries extends android.app.Application {
 
     public Map<String, Entry> getEntries() {
         if (entryMap.isEmpty()) {
-            //switch to surfer instead of qd3
             File directory = Environment.getExternalStorageDirectory();
             createEntries(new File(directory + "/data.json"));
         }
         return new HashMap<>(entryMap);
     }
 
-    public List<Entry> getResults() {
-        return new ArrayList<>(results);
+    public String[] getGenreList() {
+        return genreList.toArray(new String[genreList.size()]);
     }
 
-    public void setResults(List<Entry> results) {
-        this.results = new ArrayList<>();
-        for (Entry e : results) {
-            this.results.add(e);
+    public Map<String, List<Entry>> getGenreMap() {
+        if (genreMap.isEmpty()) {
+            File directory = Environment.getExternalStorageDirectory();
+            createEntries(new File(directory + "/data.json"));
         }
-    }
-
-    public Entry getSelected() {
-        return new Entry(selected.getTitle(), selected.getSynonyms(), selected.getSynopsis(),
-                selected.getThumbnail(), selected.getGenres(), selected.getTags(), selected.getServices(),
-                selected.getEpisodes());
-    }
-
-    public void setSelected(Entry e) {
-        selected = new Entry(e.getTitle(), e.getSynonyms(), e.getSynopsis(), e.getThumbnail(), e.getGenres(),
-                e.getTags(), e.getServices(), e.getEpisodes());
+        return new HashMap<>(genreMap);
     }
 
     private void createEntries(File file) {
@@ -89,7 +78,11 @@ public class Entries extends android.app.Application {
                 List<String> genres = new ArrayList<String>();
                 reader.beginArray();
                 while (reader.peek() != JsonToken.END_ARRAY) {
-                    genres.add(reader.nextString());
+                    String genre = reader.nextString();
+                    genres.add(genre);
+                    if (!genreList.contains(genre)) {
+                        genreList.add(genre);
+                    }
                 }
                 reader.endArray();
                 reader.skipValue();
@@ -144,6 +137,18 @@ public class Entries extends android.app.Application {
                 reader.endArray();
                 reader.endObject();
                 entryMap.put(title.toLowerCase(), new Entry(title, synonyms, synopsis, thumbnail, genres, tags, services, episodes));
+                for (String genre : genres) {
+                    Entry e = new Entry(title, synonyms, synopsis, thumbnail, genres, tags, services, episodes);
+                    if (genreMap.get(genre) == null) {
+                        List<Entry> newList = new ArrayList<>();
+                        newList.add(e);
+                        genreMap.put(genre, newList);
+                    } else {
+                        List<Entry> list = genreMap.get(genre);
+                        list.add(e);
+                        genreMap.put(genre, list);
+                    }
+                }
             }
             reader.endArray();
         } catch (IOException e) {

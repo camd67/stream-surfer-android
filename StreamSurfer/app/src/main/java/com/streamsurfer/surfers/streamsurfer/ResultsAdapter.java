@@ -22,7 +22,7 @@ public class ResultsAdapter extends BaseAdapter {
     private int[] imageIdRight;
     private static LayoutInflater inflater = null;
 
-    public ResultsAdapter(Results activity, String[] titlesLeft, String[] titlesRight, int[] imagesLeft, int[] imagesRight) {
+    public ResultsAdapter(Context activity, String[] titlesLeft, String[] titlesRight, int[] imagesLeft, int[] imagesRight) {
         resultLeft = titlesLeft;
         resultRight = titlesRight;
         context = activity;
@@ -53,7 +53,6 @@ public class ResultsAdapter extends BaseAdapter {
         TextView tvr = (TextView) rowView.findViewById(R.id.title_right);
         ImageView imgl = (ImageView) rowView.findViewById(R.id.image_left);
         ImageView imgr = (ImageView) rowView.findViewById(R.id.image_right);
-        LinearLayout layout = (LinearLayout) rowView.findViewById(R.id.linear_layout);
         tvl.setText(resultLeft[position]);
         imgl.setImageResource(imageIdLeft[position]);
         if (resultRight[position] != null) {
