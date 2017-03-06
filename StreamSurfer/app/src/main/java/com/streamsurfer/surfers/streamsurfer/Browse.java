@@ -32,21 +32,19 @@ public class Browse extends AppCompatActivity implements AdapterView.OnItemSelec
 
         if (option.equals("genres")) {
             results = entries.getGenreMap();
-            title.setText("Action");
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, entries.getGenreList());
             spinner.setAdapter(adapter);
         } else if (option.equals("services")) {
-
-        } else if (option.equals("popular")) {
-
+            results = entries.getServiceMap();
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, entries.getServiceList());
+            spinner.setAdapter(adapter);
         }
-        setAdapter.customAdapterSet(specificResultList, results.get("action"), this);
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-        String genre = parent.getItemAtPosition(pos).toString();
-        title.setText(genre.toUpperCase());
-        setAdapter.customAdapterSet(specificResultList, results.get(genre), this);
+        String name = parent.getItemAtPosition(pos).toString();
+        title.setText(name.toUpperCase());
+        setAdapter.customAdapterSet(specificResultList, results.get(name.toUpperCase()), this);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {

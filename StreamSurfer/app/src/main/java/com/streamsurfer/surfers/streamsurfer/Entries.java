@@ -20,7 +20,9 @@ import java.util.Map;
 public class Entries extends android.app.Application {
     private Map<String, Entry> entryMap = new HashMap<>();
     private Map<String, List<Entry>> genreMap = new HashMap<>();
+    private Map<String, List<Entry>> serviceMap = new HashMap<>();
     private List<String> genreList = new ArrayList<>();
+    private List<String> serviceList = new ArrayList<>();
     private static Entries instance = null;
 
     @Override
@@ -47,12 +49,24 @@ public class Entries extends android.app.Application {
         return genreList.toArray(new String[genreList.size()]);
     }
 
+    public String[] getServiceList() {
+        return serviceList.toArray(new String[serviceList.size()]);
+    }
+
     public Map<String, List<Entry>> getGenreMap() {
         if (genreMap.isEmpty()) {
             File directory = Environment.getExternalStorageDirectory();
             createEntries(new File(directory + "/data.json"));
         }
         return new HashMap<>(genreMap);
+    }
+
+    public Map<String, List<Entry>> getServiceMap() {
+        if (serviceMap.isEmpty()) {
+            File directory = Environment.getExternalStorageDirectory();
+            createEntries(new File(directory + "/data.json"));
+        }
+        return new HashMap<>(serviceMap);
     }
 
     private void createEntries(File file) {
@@ -80,8 +94,8 @@ public class Entries extends android.app.Application {
                 while (reader.peek() != JsonToken.END_ARRAY) {
                     String genre = reader.nextString();
                     genres.add(genre);
-                    if (!genreList.contains(genre)) {
-                        genreList.add(genre);
+                    if (!genreList.contains(genre.toUpperCase())) {
+                        genreList.add(genre.toUpperCase());
                     }
                 }
                 reader.endArray();
@@ -105,6 +119,9 @@ public class Entries extends android.app.Application {
                     String icon = reader.nextString();
                     reader.endObject();
                     services.add(new Service(name, baseUrl, icon));
+                    if (!serviceList.contains(name.toUpperCase())) {
+                        serviceList.add(name.toUpperCase());
+                    }
                 }
                 reader.endArray();
                 reader.skipValue();
@@ -136,23 +153,30 @@ public class Entries extends android.app.Application {
                 }
                 reader.endArray();
                 reader.endObject();
-                entryMap.put(title.toLowerCase(), new Entry(title, synonyms, synopsis, thumbnail, genres, tags, services, episodes));
+                Entry e = new Entry(title, synonyms, synopsis, thumbnail, genres, tags, services, episodes);
+                entryMap.put(title.toLowerCase(), e);
                 for (String genre : genres) {
-                    Entry e = new Entry(title, synonyms, synopsis, thumbnail, genres, tags, services, episodes);
-                    if (genreMap.get(genre) == null) {
-                        List<Entry> newList = new ArrayList<>();
-                        newList.add(e);
-                        genreMap.put(genre, newList);
-                    } else {
-                        List<Entry> list = genreMap.get(genre);
-                        list.add(e);
-                        genreMap.put(genre, list);
-                    }
+                    addToMap(genreMap, e, genre.toUpperCase());
+                }
+                for (Service service : services) {
+                    addToMap(serviceMap, e, service.getName().toUpperCase());
                 }
             }
             reader.endArray();
         } catch (IOException e) {
             Log.e("JSON", e.toString());
+        }
+    }
+
+    private void addToMap(Map<String, List<Entry>> map, Entry e, String check) {
+        if (map.get(check) == null) {
+            List<Entry> newList = new ArrayList<>();
+            newList.add(e);
+            map.put(check, newList);
+        } else {
+            List<Entry> list = map.get(check);
+            list.add(e);
+            map.put(check, list);
         }
     }
 }
