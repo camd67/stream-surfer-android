@@ -22,7 +22,8 @@
         </activity>
         <activity android:name=".Results" />
         <activity android:name=".Details" />
-        <activity android:name=".Browse"></activity>
+        <activity android:name=".Browse" />
+        <activity android:name=".AdvancedSearch"></activity>
     </application>
 
 </manifest>

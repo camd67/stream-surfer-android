@@ -2,4 +2,8 @@
     <string name="app_name">StreamSurfer</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="genre">Genre</string>
+    <string name="service">Service</string>
+    <string name="advanced_search">Advanced Search</string>
+    <string name="search">Search</string>
 </resources>

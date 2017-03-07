@@ -120,7 +120,7 @@ public class Entries extends android.app.Application {
                     reader.skipValue();
                     String icon = reader.nextString();
                     reader.endObject();
-                    services.add(new Service(name, baseUrl, icon));
+                    services.add(new Service(name.toUpperCase(), baseUrl, icon));
                     if (!serviceList.contains(name.toUpperCase())) {
                         serviceList.add(name.toUpperCase());
                     }

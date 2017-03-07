@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,7 +25,7 @@ public class Results extends AppCompatActivity {
     private Entries entries = Entries.getInstance();
     public static final String SELECTED = "selected";
     private Map<String, Entry> entryMap = entries.getEntries();
-    private List<Entry> results;
+    private List<Entry> results = new ArrayList<>();
     private SetAdapter setAdapter = new SetAdapter();
 
     @Override
@@ -33,11 +34,14 @@ public class Results extends AppCompatActivity {
         setContentView(R.layout.activity_results);
 
         String search = getIntent().getStringExtra(MainActivity.RESULTS);
-        results = getResults(search);
+        ArrayList<String> genreList = getIntent().getStringArrayListExtra(AdvancedSearch.GENRELIST);
+        ArrayList<String> serviceList = getIntent().getStringArrayListExtra(AdvancedSearch.SERVICELIST);
+
+        //get results
+        getAdvancedResults(search, genreList, serviceList);
 
         final ListView resultList = (ListView) findViewById(R.id.result_list);
         final EditText input = (EditText) findViewById(R.id.results_input);
-        input.setHint(search);
         Button searchButton = (Button) findViewById(R.id.results_button);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -53,14 +57,40 @@ public class Results extends AppCompatActivity {
         setAdapter.customAdapterSet(resultList, results, this);
     }
 
-    private List<Entry> getResults(String search) {
-        List<Entry> results = new ArrayList<>();
+    private void getAdvancedResults(String search, ArrayList<String> genreList, ArrayList<String> serviceList) {
+        List<Entry> temporaryResults = new ArrayList<>();
         Set<String> entryKeys = entryMap.keySet();
         for (String s : entryKeys) {
             if (s.contains(search)) {
-                results.add(entryMap.get(s));
+                temporaryResults.add(entryMap.get(s));
             }
         }
+        for (Entry e : temporaryResults) {
+            Boolean removeGenre = false;
+            Boolean removeService = false;
+            List<String> genres = e.getGenres();
+            for (String genre : genreList) {
+                if (!genres.contains(genre.toLowerCase())) {
+                    removeGenre = true;
+                    break;
+                }
+            }
+            List<Service> services = e.getServices();
+            for (String service : serviceList) {
+                if (!services.contains(new Service(service, null, null))) {
+                    removeService = true;
+                    break;
+                }
+            }
+            if (!removeGenre && !removeService) {
+                results.add(e);
+            }
+        }
+    }
+
+    private List<Entry> getResults(String search) {
+        List<Entry> results = new ArrayList<>();
+
         return results;
     }
 

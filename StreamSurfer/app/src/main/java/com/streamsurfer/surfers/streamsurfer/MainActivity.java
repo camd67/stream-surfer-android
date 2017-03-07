@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
                     final TextView searchInput = (TextView) findViewById(R.id.search_input);
                     Button searchButton = (Button) findViewById(R.id.search_button);
+                    Button advanced = (Button) findViewById(R.id.advanced_search_button);
 
                     searchButton.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -134,6 +135,14 @@ public class MainActivity extends AppCompatActivity {
                             test.putExtra(OPTION, "services");
                             //startActivity(test);
                             startActivity(activity);
+                        }
+                    });
+
+                    advanced.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent advanced = new Intent(MainActivity.this, AdvancedSearch.class);
+                            startActivity(advanced);
                         }
                     });
                 }
