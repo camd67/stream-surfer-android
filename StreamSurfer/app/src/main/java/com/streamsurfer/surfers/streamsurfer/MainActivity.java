@@ -10,12 +10,16 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.Map;
@@ -66,9 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
         layout.addDrawerListener(toggle);
 
-        ActionBar action = getSupportActionBar();
-        action.setDisplayHomeAsUpEnabled(true);
-        action.setHomeButtonEnabled(true);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
+        setSupportActionBar(toolbar);
+
 
         final ListView drawerList = (ListView) findViewById(R.id.left_drawer);
         final TextView searchInput = (TextView) findViewById(R.id.search_input);
@@ -97,5 +102,30 @@ public class MainActivity extends AppCompatActivity {
                 //startActivity(activity);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_icons, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                // Left hamburger icon
+                Toast.makeText(this, "Opening nav menu", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.search_icon:
+                Toast.makeText(this, "Searching...", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.my_list_icon:
+                Toast.makeText(this, "My list", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                // keep this, we need it if we don't know how to handle it
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
