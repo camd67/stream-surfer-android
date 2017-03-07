@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
 
                             Intent test = new Intent(MainActivity.this, Browse.class);
                             test.putExtra(OPTION, "services");
-                            //startActivity(test);
-                            startActivity(activity);
+                            startActivity(test);
+                            //startActivity(activity);
                         }
                     });
 

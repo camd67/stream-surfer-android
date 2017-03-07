@@ -11,30 +11,18 @@
     android:orientation="vertical"
     tools:context="com.streamsurfer.surfers.streamsurfer.Browse">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <Spinner
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:weightSum="1">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:id="@+id/search_title"
-            android:layout_weight=".9"/>
-
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:id="@+id/spinner"
-            android:layout_weight=".1"/>
-    </LinearLayout>
+        android:layout_height="30dp"
+        android:id="@+id/spinner"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@null"
-        android:dividerHeight="0dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0sp"
         android:id="@+id/specific_results_list"/>
 
 </LinearLayout>
