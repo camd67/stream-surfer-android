@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.Map;
 
-public class Browse extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class BrowseActivity extends BaseActivity implements AdapterView.OnItemSelectedListener {
     private Entries entries = Entries.getInstance();
     private Map<String, List<Entry>> results;
     private SetAdapter setAdapter = new SetAdapter();

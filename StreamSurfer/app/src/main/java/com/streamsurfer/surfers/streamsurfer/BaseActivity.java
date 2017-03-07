@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,10 +32,10 @@ public class BaseActivity extends AppCompatActivity {
     public void setContentView(int layoutResID)
     {
 
-        DrawerLayout fullView = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_base, null);
-        FrameLayout activityContainer = (FrameLayout) fullView.findViewById(R.id.content_frame);
+        drawer = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_base, null);
+        FrameLayout activityContainer = (FrameLayout) drawer.findViewById(R.id.content_frame);
         getLayoutInflater().inflate(layoutResID, activityContainer, true);
-        super.setContentView(fullView);
+        super.setContentView(drawer);
 
         ListView drawerList = (ListView)findViewById(R.id.drawer_list);
 
@@ -61,7 +62,11 @@ public class BaseActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case android.R.id.home:
                 // Left hamburger icon
-                Toast.makeText(this, "Opening nav menu", Toast.LENGTH_SHORT).show();
+                if(drawer.isDrawerOpen(Gravity.START)){
+                    drawer.closeDrawer(Gravity.START);
+                } else {
+                    drawer.openDrawer(Gravity.START);
+                }
                 return true;
             case R.id.search_icon:
                 Toast.makeText(this, "Searching...", Toast.LENGTH_SHORT).show();

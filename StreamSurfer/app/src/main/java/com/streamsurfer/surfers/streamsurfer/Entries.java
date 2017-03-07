@@ -13,9 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Jack on 3/1/2017.
- */
 
 public class Entries extends android.app.Application {
     private Map<String, Entry> entryMap = new HashMap<>();
