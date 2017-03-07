@@ -39,8 +39,7 @@ public class Entries extends android.app.Application {
 
     public Map<String, Entry> getEntries() {
         if (entryMap.isEmpty()) {
-            File directory = Environment.getExternalStorageDirectory();
-            createEntries(new File(directory + "/data.json"));
+            createEntries(new File("/storage/emulated/0/Download/sampleData.json"));
         }
         return new HashMap<>(entryMap);
     }
@@ -84,9 +83,12 @@ public class Entries extends android.app.Application {
                     synonyms.add(reader.nextString());
                 }
                 reader.endArray();
-                reader.skipValue();
-                String synopsis = reader.nextString();
-                reader.skipValue();
+                String key = reader.nextName();
+                String synopsis = "";
+                if (key.equals("synopsis")) {
+                    synopsis = reader.nextString();
+                    reader.skipValue();
+                }
                 String thumbnail = reader.nextString();
                 reader.skipValue();
                 List<String> genres = new ArrayList<String>();

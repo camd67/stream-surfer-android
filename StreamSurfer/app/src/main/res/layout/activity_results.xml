@@ -18,7 +18,10 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:weightSum="1">
+        android:id="@+id/results_layout"
+        android:weightSum="1"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
 
         <EditText
             android:layout_width="0dp"
@@ -26,7 +29,8 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/results_input"
-            android:layout_weight=".85">
+            android:layout_weight=".85"
+            android:windowSoftInputMode="stateHidden">
         </EditText>
 
         <Button
