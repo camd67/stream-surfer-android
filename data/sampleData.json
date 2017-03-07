@@ -1,12 +1,12 @@
 [
     {
-        "title": "Show title 1",
+        "title": "Seinfeld",
         "synonyms": [
             "ST1"
         ],
-        "thumbnail": "res/sh/show_title_1.png",
+        "synopsis": "Watch Jerry Seinfeld's life in the 90's in this comedy classic.",
+        "thumbnail": "res/sh/seinfeld.png",
         "genre": [
-            "action",
             "comedy"
         ],
         "tags": [
@@ -14,18 +14,18 @@
         ],
         "services": [
             {
-                "name": "Netflix",
-                "baseUrl": "https://netflix.com",
-                "icon": "res/ser/netflix.png"
+                "name": "Hulu",
+                "baseUrl": "https://www.hulu.com/seinfeld",
+                "icon": "res/ser/hulu.png"
             }
         ],
         "episodes": [
             {
-                "title": "Ep 1",
+                "title": "Seinfeld",
                 "episodeNumber": 1,
                 "seasonNumber": 1,
-                "releaseDate": "2016-12-10",
-                "length": 600,
+                "releaseDate": "1989-05-06",
+                "length": 1380,
                 "synonyms": [
                     "The first"
                 ],
@@ -57,50 +57,14 @@
         ]
     },
     {
-        "title": "Movie 1",
+        "title": "Top Gun",
         "synonyms": [
-            "The only movie we have"
+            "Top Gun (1986)"
         ],
-        "thumbnail": "res/sh/movie_1.png",
+        "synopsis": "Fighter pilot Pete Mitchell goes to Miramar Naval Air Station for training, where he competes with TomKasansky for the \"Top Gun\" award",
+        "thumbnail": "res/sh/top_gun.png",
         "genre": [
-            "action",
-            "comedy",
-            "romance"
-        ],
-        "tags": [
-            "movie"
-        ],
-        "services": [
-            {
-                "name": "Netflix",
-                "baseUrl": "https://netflix.com",
-                "icon": "res/ser/netflix.png"
-            }
-        ],
-        "episodes": [
-            {
-                "title": "Movie title",
-                "episodeNumber": 1,
-                "seasonNumber": 1,
-                "releaseDate": "2016-12-20",
-                "length": 18000,
-                "synonyms": [
-                    "The first movie",
-                    "Everyone’s fave"
-                ],
-                "thumbnail": "res/ep/mov_1.png"
-            }
-        ]
-    },
-    {
-        "title": "Super Funny",
-        "synonyms": [
-            "SF"
-        ],
-        "thumbnail": "res/sh/movie_2.png",
-        "genre": [
-            "comedy",
-            "historical"
+            "action"
         ],
         "tags": [
             "movie"
@@ -108,21 +72,20 @@
         "services": [
             {
                 "name": "Hulu",
-                "baseUrl": "https://hulu.com",
+                "baseUrl": "https://www.hulu.com/watch/909396",
                 "icon": "res/ser/hulu.png"
             }
         ],
         "episodes": [
             {
-                "title": "Super Funny",
+                "title": "Top Gun",
                 "episodeNumber": 1,
                 "seasonNumber": 1,
-                "releaseDate": "2015-12-20",
-                "length": 16000,
+                "releaseDate": "1986-05-16",
+                "length": 6540,
                 "synonyms": [
-                    "SF"
                 ],
-                "thumbnail": "res/ep/mov_2.png"
+                "thumbnail": "res/ep/top_gun.png"
             }
         ]
     },
@@ -132,6 +95,7 @@
         "synopsis": "Guided by the spirit demon within him, orphaned Naruto learns to harness his powers as a ninja in this anime adventure series.",
         "thumbnail": "res/sh/naruto.png",
         "genre": [
+            "action",
             "comedy",
             "historical"
         ],
@@ -141,12 +105,12 @@
         "services": [
             {
                 "name": "Hulu",
-                "baseUrl": "https://hulu.com",
+                "baseUrl": "https://www.hulu.com/naruto",
                 "icon": "res/ser/hulu.png"
             },
             {
                 "name": "Netflix",
-                "baseUrl": "https://www.netflix.com",
+                "baseUrl": "https://www.netflix.com/title/70205012",
                 "icon": "res/ser/netflix.png"
             }
         ],
@@ -156,7 +120,7 @@
                 "episodeNumber": 1,
                 "seasonNumber": 1,
                 "releaseDate": "2015-12-20",
-                "length": 1416,
+                "length": 1380,
                 "synonyms": [],
                 "thumbnail": "res/ep/naruto_s1_e1.png"
             },
@@ -165,7 +129,7 @@
                 "episodeNumber": 2,
                 "seasonNumber": 1,
                 "releaseDate": "2015-12-20",
-                "length": 1416,
+                "length": 1380,
                 "synonyms": [],
                 "thumbnail": "res/ep/naruto_s1_e2.png"
             }
