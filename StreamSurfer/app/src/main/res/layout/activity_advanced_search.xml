@@ -37,7 +37,8 @@
             android:text="@string/genre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/advanced_genre_text" />
+            android:id="@+id/advanced_genre_text"
+            android:gravity="center_horizontal"/>
 
         <ListView
             android:layout_width="match_parent"
@@ -55,7 +56,8 @@
             android:text="@string/service"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/advanced_service_text" />
+            android:id="@+id/advanced_service_text"
+            android:gravity="center_horizontal"/>
 
         <ListView
             android:layout_width="match_parent"

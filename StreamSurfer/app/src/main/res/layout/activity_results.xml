@@ -11,41 +11,15 @@
     android:orientation="vertical"
     tools:context="com.streamsurfer.surfers.streamsurfer.Results">
 
-
-
-
-    <LinearLayout
-        android:orientation="horizontal"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/results_layout"
-        android:weightSum="1"
-        android:descendantFocusability="beforeDescendants"
-        android:focusableInTouchMode="true">
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/results_input"
-            android:layout_weight=".85"
-            android:windowSoftInputMode="stateHidden">
-        </EditText>
-
-        <Button
-            android:text=""
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/results_button"
-            android:layout_weight=".15" />
-
-
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/results_title"
+        android:textSize="30sp"/>
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:divider="@null"
         android:dividerHeight="0dp"
         android:id="@+id/result_list"/>

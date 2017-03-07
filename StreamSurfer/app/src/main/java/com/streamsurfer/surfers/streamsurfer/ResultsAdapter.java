@@ -59,9 +59,14 @@ public class ResultsAdapter extends BaseAdapter {
             tvr.setText(resultRight[position]);
             imgr.setImageResource(imageIdRight[position]);
         } else {
-            imgr.setVisibility(View.GONE);
-            Button br = (Button) rowView.findViewById(R.id.button_right);
-            br.setVisibility(View.GONE);
+            LinearLayout right = (LinearLayout) rowView.findViewById(R.id.right_layout_click);
+            right.setVisibility(View.GONE);
+            right.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //do nothing
+                }
+            });
         }
         return rowView;
     }

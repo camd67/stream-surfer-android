@@ -33,7 +33,7 @@ public class Service {
     public boolean equals(Object object) {
         if (object instanceof Service) {
             Service check = (Service) object;
-            if (check.getName().equals(this.getName())) {
+            if (check.getName().toLowerCase().equals(this.getName().toLowerCase())) {
                 return true;
             }
         }

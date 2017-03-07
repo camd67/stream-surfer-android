@@ -2,64 +2,104 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/linear_layout">
-
-
+    android:layout_height="250dp"
+    android:id="@+id/linear_layout"
+    android:weightSum="1"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5">
 
-        <Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:id="@+id/button_left" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:weightSum="1"
+            android:onClick="clickHandlerLeft">
 
-        <ImageView
-            android:id="@+id/image_left"
-            android:layout_gravity="center"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@mipmap/ic_launcher"
-            android:onClick="clickHandlerLeft"/>
+            <ImageView
+                android:id="@+id/image_left"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_weight="0.80"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="#303030"/>
 
-        <TextView
-            android:id="@+id/title_left"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.20"
+                android:background="#444444">
+
+                <TextView
+                    android:id="@+id/title_left"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="15sp"
+                    android:textColor="#FFFFFF"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.5">
+        android:layout_weight="0.50">
 
-        <Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:id="@+id/button_right" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:weightSum="1"
+            android:id="@+id/right_layout_click"
+            android:onClick="clickHandlerRight">
 
-        <ImageView
-            android:id="@+id/image_right"
-            android:layout_gravity="center"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@mipmap/ic_launcher"
-            android:onClick="clickHandlerRight"/>
+            <ImageView
+                android:id="@+id/image_right"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_weight="0.80"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="#303030"/>
 
-        <TextView
-            android:id="@+id/title_right"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.20"
+                android:background="#444444">
+
+                <TextView
+                    android:id="@+id/title_right"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="15sp"
+                    android:textColor="#FFFFFF"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

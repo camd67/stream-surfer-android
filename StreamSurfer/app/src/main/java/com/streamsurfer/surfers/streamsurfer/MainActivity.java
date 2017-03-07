@@ -61,50 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 .setAllowedOverRoaming(false)
                 .setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
                         "sampleData.json"));
-
-
-
-        //todo not done with drawer... moved on because it was taking too long
-        /*final DrawerLayout layout = (DrawerLayout) findViewById(R.id.activity_main);
-        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this,
-                layout,
-                //R.mipmap.ic_drawer,
-                R.string.drawer_open,
-                R.string.drawer_close
-        ) {
-
-
-            public void onDrawerClosed(View view) {
-                super.onDrawerClosed(view);
-            }
-
-
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-            }
-        };
-
-        layout.addDrawerListener(toggle);
-
-        ActionBar action = getSupportActionBar();
-        action.setDisplayHomeAsUpEnabled(true);
-        action.setHomeButtonEnabled(true);
-
-        final ListView drawerList = (ListView) findViewById(R.id.left_drawer);
-
-        String[] layoutValues = {"Search", "Advanced Search", "Popular", "Recently Updated",
-        "Genres", "Services", "MyList", "Settings", "Logout"};
-
-        drawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, layoutValues));
-        drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-        });*/
-
-
     }
 
     BroadcastReceiver onComplete = new BroadcastReceiver() {
