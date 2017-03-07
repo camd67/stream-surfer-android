@@ -18,7 +18,7 @@ public class MainActivity extends BaseActivity {
 
     public static final String RESULTS = "results";
     public static final String OPTION = "option";
-    private Entries entries = Entries.getInstance();
+    private EntriesApp entries = EntriesApp.getInstance();
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override

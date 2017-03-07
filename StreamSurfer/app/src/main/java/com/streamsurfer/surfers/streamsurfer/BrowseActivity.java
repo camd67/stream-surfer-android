@@ -1,6 +1,5 @@
 package com.streamsurfer.surfers.streamsurfer;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BrowseActivity extends BaseActivity implements AdapterView.OnItemSelectedListener {
-    private Entries entries = Entries.getInstance();
+    private EntriesApp entries = EntriesApp.getInstance();
     private Map<String, List<Entry>> results;
     private SetAdapter setAdapter = new SetAdapter();
     private TextView title;

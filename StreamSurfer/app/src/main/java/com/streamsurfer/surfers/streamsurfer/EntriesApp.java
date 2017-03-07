@@ -14,22 +14,23 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Entries extends android.app.Application {
+public class EntriesApp extends android.app.Application {
     private Map<String, Entry> entryMap = new HashMap<>();
     private Map<String, List<Entry>> genreMap = new HashMap<>();
     private Map<String, List<Entry>> serviceMap = new HashMap<>();
     private List<String> genreList = new ArrayList<>();
     private List<String> serviceList = new ArrayList<>();
-    private static Entries instance = null;
+    private static EntriesApp instance = null;
+    private static final String TAG = "EntriesApp";
 
     @Override
     public void onCreate() {
         super.onCreate();
     }
 
-    public static Entries getInstance() {
+    public static EntriesApp getInstance() {
         if (instance == null) {
-            instance = new Entries();
+            instance = new EntriesApp();
         }
         return instance;
     }
@@ -67,6 +68,7 @@ public class Entries extends android.app.Application {
     }
 
     private void createEntries(File file) {
+        Log.i(TAG, "Creating entries from " + file.getAbsolutePath());
         try {
             JsonReader reader = new JsonReader(new FileReader(file));
             reader.beginArray();

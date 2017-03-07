@@ -1,6 +1,5 @@
 package com.streamsurfer.surfers.streamsurfer;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -9,7 +8,7 @@ import java.util.List;
 
 public class DetailsActivity extends BaseActivity {
 
-    private Entries entries = Entries.getInstance();
+    private EntriesApp entries = EntriesApp.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -16,7 +16,7 @@ import java.util.Set;
 
 public class ResultsActivity extends BaseActivity {
 
-    private Entries entries = Entries.getInstance();
+    private EntriesApp entries = EntriesApp.getInstance();
     public static final String SELECTED = "selected";
     private Map<String, Entry> entryMap = entries.getEntries();
     private List<Entry> results;
