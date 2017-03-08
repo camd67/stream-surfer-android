@@ -60,6 +60,8 @@ public class MyListAdapter extends BaseAdapter {
         }
 
         ImageView thumbnail = (ImageView)row.findViewById(R.id.my_list_thumbnail);
+        // TODO: Jack, insert image of show here (not episode)
+        // ListEntry (entry here) has a getFilename method that gets the filename
         TextView title = (TextView)row.findViewById(R.id.my_list_title_header);
         final TextView status = (TextView)row.findViewById(R.id.my_list_status);
         RatingBar rating = (RatingBar) row.findViewById(R.id.my_list_rating);
@@ -98,7 +100,6 @@ public class MyListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 entry.incrementEps();
-                Log.d("MyListAdapter", "updated entry " + entry.toString());
                 notifyDataSetChanged();
             }
         });

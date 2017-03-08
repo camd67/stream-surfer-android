@@ -21,6 +21,15 @@
             android:weightSum="1"
             android:onClick="clickHandlerLeft">
 
+            <Button
+                android:id="@+id/button_add_to_list1"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:drawableStart="@drawable/icon_my_list"
+                android:drawableLeft="@drawable/icon_my_list"
+                android:layout_marginBottom="-45dp"
+                />
+
             <ImageView
                 android:id="@+id/image_left"
                 android:layout_gravity="center"
@@ -68,6 +77,16 @@
             android:weightSum="1"
             android:id="@+id/right_layout_click"
             android:onClick="clickHandlerRight">
+
+
+            <Button
+                android:id="@+id/button_add_to_list2"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:drawableStart="@drawable/icon_my_list"
+                android:drawableLeft="@drawable/icon_my_list"
+                android:layout_marginBottom="-45dp"
+                />
 
             <ImageView
                 android:id="@+id/image_right"
