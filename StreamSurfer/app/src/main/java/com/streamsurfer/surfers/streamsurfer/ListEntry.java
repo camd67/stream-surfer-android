@@ -47,6 +47,9 @@ public class ListEntry {
         if(epsSeen == totalEps){
             setStatus(ShowStatus.COMPLETE);
         }
+        if(status == ShowStatus.DROPPED){
+            setStatus(ShowStatus.WATCHING);
+        }
     }
 
     public void setEpsSeen(int epsSeen) {

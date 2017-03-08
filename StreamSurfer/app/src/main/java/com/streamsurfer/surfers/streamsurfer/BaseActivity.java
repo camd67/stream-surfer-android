@@ -45,7 +45,7 @@ public class BaseActivity extends AppCompatActivity {
             navView.setCheckedItem(selectedItem);
         }
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
+        toolbar.setNavigationIcon(R.drawable.icon_menu);
         setSupportActionBar(toolbar);
     }
 

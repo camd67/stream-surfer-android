@@ -47,13 +47,11 @@
             android:layout_below="@+id/my_list_rating"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
-            <Button
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/add_episode"
+                android:src="@drawable/icon_plus_one"
                 android:id="@+id/my_list_plus_one"
-                android:layout_marginLeft="15dp"
-                android:layout_marginStart="15dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
@@ -62,11 +60,18 @@
                 android:layout_height="match_parent"
                 android:text="@string/edit_entry"
                 android:id="@+id/my_list_edit"
-                android:layout_marginRight="15dp"
-                android:layout_marginEnd="15dp"
+                android:drawableLeft="@drawable/icon_edit_pencil"
+                android:drawableStart="@drawable/icon_edit_pencil"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/my_list_watch"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/icon_play"/>
         </RelativeLayout>
     </RelativeLayout>
 

@@ -18,7 +18,7 @@
     <string name="tagline">Find all your favorite streams with us!</string>
 
     <string name="add_episode">Episode +1</string>
-    <string name="edit_entry">Edit Entry</string>
+    <string name="edit_entry">Edit</string>
     <string name="my_list_complete">Complete</string>
     <string name="my_list_dropped">Dropped (%1$d / %2$d)</string>
     <string name="my_list_watching">Watching (%1$d / %2$d)</string>
