@@ -51,7 +51,7 @@ public class ListEntry {
         if(epsSeen == totalEps){
             setStatus(ShowStatus.COMPLETE);
         }
-        if(status == ShowStatus.DROPPED){
+        if(status == ShowStatus.DROPPED || status == ShowStatus.PLAN_TO_WATCH){
             setStatus(ShowStatus.WATCHING);
         }
     }
@@ -59,6 +59,14 @@ public class ListEntry {
     public void setEpsSeen(int epsSeen) {
         this.epsSeen = epsSeen;
         constrainEps();
+        if(epsSeen > 0) {
+            if (epsSeen == totalEps) {
+                setStatus(ShowStatus.COMPLETE);
+            }
+            if (status == ShowStatus.DROPPED) {
+                setStatus(ShowStatus.WATCHING);
+            }
+        }
     }
 
     private void constrainEps() {

@@ -1,10 +1,13 @@
 package com.streamsurfer.surfers.streamsurfer;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.media.Image;
+import android.media.Rating;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,33 +60,54 @@ public class MyListAdapter extends BaseAdapter {
         }
 
         ImageView thumbnail = (ImageView)row.findViewById(R.id.my_list_thumbnail);
+        // TODO: Jack, insert image of show here (not episode)
+        // ListEntry (entry here) has a getFilename method that gets the filename
         TextView title = (TextView)row.findViewById(R.id.my_list_title_header);
         final TextView status = (TextView)row.findViewById(R.id.my_list_status);
-        TextView rating = (TextView)row.findViewById(R.id.my_list_rating);
+        RatingBar rating = (RatingBar) row.findViewById(R.id.my_list_rating);
         ImageButton plusOne = (ImageButton)row.findViewById(R.id.my_list_plus_one);
         ImageButton play = (ImageButton)row.findViewById(R.id.my_list_watch);
+        Button delete = (Button)row.findViewById(R.id.my_list_delete);
 
         final Resources res = context.getResources();
         setText(entry.getTitle(), title);
-        setText(res.getString(R.string.my_list_rating, entry.getRating(), ListEntry.MAX_RATING), rating);
-
+        rating.setNumStars(ListEntry.MAX_RATING);
+        rating.setStepSize(1);
+        rating.setRating(entry.getRating());
         setStatusText(entry, status, res);
 
-        if(entry.getStatus() == ShowStatus.COMPLETE || entry.getStatus() == ShowStatus.DROPPED)
+        if(entry.getStatus() == ShowStatus.COMPLETE){
+            plusOne.setVisibility(View.INVISIBLE);
+        }
 
+        rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                if(fromUser){
+                    entry.setRating((int)rating);
+                }
+            }
+        });
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                entries.remove(entry);
+                EntriesApp.getInstance().getMyListManager(context).removeEntry(entry);
+                notifyDataSetChanged();
+            }
+        });
         plusOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 entry.incrementEps();
-                // force update of entry
-                setStatusText(entry, status, res);
+                notifyDataSetChanged();
             }
         });
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, DetailsActivity.class);
-                i.putExtra(ResultsActivity.SELECTED, entry.getTitle());
+                i.putExtra(ResultsActivity.SELECTED, entry.getTitle().toLowerCase());
                 context.startActivity(i);
             }
         });
