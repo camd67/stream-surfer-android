@@ -123,7 +123,6 @@ public class BaseActivity extends AppCompatActivity {
                 Intent i = new Intent(this, MyListActivity.class);
                 i.putExtra(BaseActivity.EXTRA_SELECTED_NAV_ITEM, id);
                 startActivity(i);
-                Toast.makeText(this, "My List", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_settings:
                 Intent settings = new Intent(BaseActivity.this, SettingsActivity.class);

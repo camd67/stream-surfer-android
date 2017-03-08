@@ -57,11 +57,12 @@
                 <TextView
                     android:id="@+id/updated_left"
                     android:layout_width="match_parent"
+                    android:textSize="12sp"
                     android:layout_height="0dp"
                     android:text="TextView"
                     android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
                     android:textColor="#FFFFFF"
                     android:layout_weight="0.40"/>
             </LinearLayout>
@@ -120,9 +121,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:text="TextView"
+                    android:textSize="12sp"
                     android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
                     android:textColor="#FFFFFF"
                     android:layout_weight="0.40"/>
             </LinearLayout>
