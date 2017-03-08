@@ -5,14 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/**
- * Created by Jack on 3/2/2017.
- */
 
 public class EpisodesAdapter extends BaseAdapter {
     private Context context;
@@ -21,7 +15,7 @@ public class EpisodesAdapter extends BaseAdapter {
     private String[] episodeTitle;
     private static LayoutInflater inflater = null;
 
-    public EpisodesAdapter(Details activity, int[] episodeNumber, int[] seasonNumber, String[] episodeTitle) {
+    public EpisodesAdapter(DetailsActivity activity, int[] episodeNumber, int[] seasonNumber, String[] episodeTitle) {
         this.context = activity;
         this.episodeNumber = episodeNumber;
         this.seasonNumber = seasonNumber;

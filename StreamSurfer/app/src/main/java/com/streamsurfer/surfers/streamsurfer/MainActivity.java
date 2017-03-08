@@ -15,19 +15,9 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.PowerManager;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,13 +32,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     public static final String RESULTS = "results";
     public static final String OPTION = "option";
-    private Entries entries = Entries.getInstance();
     private static DownloadManager dm = null;
     private Map<String, Entry> entryList;
+    private EntriesApp entries = EntriesApp.getInstance();
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -123,10 +113,10 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     String search = searchInput.getText().toString().toLowerCase();
-                    Intent activity = new Intent(MainActivity.this, Results.class);
+                    Intent activity = new Intent(MainActivity.this, ResultsActivity.class);
                     activity.putExtra(RESULTS, search);
 
-                    Intent test = new Intent(MainActivity.this, Browse.class);
+                    Intent test = new Intent(MainActivity.this, BrowseActivity.class);
                     test.putExtra(OPTION, "services");
                     //startActivity(test);
 

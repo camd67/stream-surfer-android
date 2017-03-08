@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class AdvancedSearch extends AppCompatActivity {
 
-    private Entries entries = Entries.getInstance();
+    private EntriesApp entries = EntriesApp.getInstance();
     public static final String GENRELIST = "genre";
     public static final String SERVICELIST = "service";
 
@@ -45,7 +45,7 @@ public class AdvancedSearch extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent activity = new Intent(AdvancedSearch.this, Results.class);
+                Intent activity = new Intent(AdvancedSearch.this, ResultsActivity.class);
                 activity.putStringArrayListExtra(GENRELIST, (ArrayList<String>) genreAdapter.getResults());
                 activity.putStringArrayListExtra(SERVICELIST, (ArrayList<String>) serviceAdapter.getResults());
                 activity.putExtra(MainActivity.RESULTS, input.getText().toString().toLowerCase());

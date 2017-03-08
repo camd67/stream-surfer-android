@@ -10,9 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/**
- * Created by Jack on 3/1/2017.
- */
+
 
 public class ResultsAdapter extends BaseAdapter {
     private String[] resultLeft;

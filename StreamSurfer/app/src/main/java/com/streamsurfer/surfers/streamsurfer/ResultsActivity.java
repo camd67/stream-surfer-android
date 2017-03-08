@@ -2,14 +2,11 @@ package com.streamsurfer.surfers.streamsurfer;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,9 +19,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class Results extends AppCompatActivity {
+public class ResultsActivity extends BaseActivity {
 
-    private Entries entries = Entries.getInstance();
+    private EntriesApp entries = EntriesApp.getInstance();
     public static final String SELECTED = "selected";
     private Map<String, Entry> entryMap = entries.getEntries();
     private List<Entry> results;
@@ -97,7 +94,7 @@ public class Results extends AppCompatActivity {
         LinearLayout row = (LinearLayout) v.getParent();
         TextView title = (TextView) row.findViewById(id);
         String selected = title.getText().toString().toLowerCase();
-        Intent detail = new Intent(Results.this, Details.class);
+        Intent detail = new Intent(ResultsActivity.this, DetailsActivity.class);
         detail.putExtra(SELECTED, selected);
         startActivity(detail);
     }

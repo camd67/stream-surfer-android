@@ -1,10 +1,5 @@
 package com.streamsurfer.surfers.streamsurfer;
 
-import java.util.Objects;
-
-/**
- * Created by Jack on 3/1/2017.
- */
 
 public class Service {
     private String name;

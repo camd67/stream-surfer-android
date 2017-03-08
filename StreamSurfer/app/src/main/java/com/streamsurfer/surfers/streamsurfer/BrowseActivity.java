@@ -1,7 +1,6 @@
 package com.streamsurfer.surfers.streamsurfer;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,8 +13,8 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.Map;
 
-public class Browse extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private Entries entries = Entries.getInstance();
+public class BrowseActivity extends BaseActivity implements AdapterView.OnItemSelectedListener {
+    private EntriesApp entries = EntriesApp.getInstance();
     private Map<String, List<Entry>> results;
     private SetAdapter setAdapter = new SetAdapter();
     private ListView specificResultList;
@@ -62,8 +61,8 @@ public class Browse extends AppCompatActivity implements AdapterView.OnItemSelec
         LinearLayout row = (LinearLayout) v.getParent();
         TextView title = (TextView) row.findViewById(id);
         String selected = title.getText().toString().toLowerCase();
-        Intent detail = new Intent(Browse.this, Details.class);
-        detail.putExtra(Results.SELECTED, selected);
+        Intent detail = new Intent(BrowseActivity.this, DetailsActivity.class);
+        detail.putExtra(ResultsActivity.SELECTED, selected);
         startActivity(detail);
     }
 }

@@ -2,11 +2,26 @@
     <string name="app_name">StreamSurfer</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+
     <string name="genre">Genre</string>
     <string name="service">Service</string>
-    <string name="advanced_search">Advanced Search</string>
-    <string name="search">Search</string>
-    <string name="settings">Settings</string>
     <string name="notify_when_shows_update">Notify when shows update</string>
     <string name="send_demo_notification">Send demo notification</string>
+    <string name="search">Search</string>
+    <string name="my_list">MyList</string>
+    <string name="title_activity_test_drawer">testDrawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="advanced_search">Advanced Search</string>
+    <string name="popular">Popular</string>
+    <string name="categories">Show Categories</string>
+    <string name="recently_updated">Recently Updated</string>
+    <string name="genres">Genres</string>
+    <string name="services">Services</string>
+    <string name="settings">Settings</string>
+    <string name="stream_surfer">StreamSurfer</string>
+    <string name="tagline">Find all your favorite streams with us!</string>
 </resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="@string/search" />
+        <item
+            android:id="@+id/nav_advanced_search"
+            android:icon="@drawable/ic_zoom_in_black_24dp"
+            android:title="@string/advanced_search" />
+        <item
+            android:id="@+id/nav_my_list"
+            android:title="@string/my_list"
+            android:icon="@drawable/ic_book_black_24dp"/>
+    </group>
+
+    <item android:title="@string/categories">
+        <menu>
+            <item
+                android:id="@+id/nav_popular"
+                android:title="@string/popular"
+                android:icon="@drawable/ic_folder_black_24dp"/>
+            <item
+                android:id="@+id/nav_recently_updated"
+                android:title="@string/recently_updated"
+                android:icon="@drawable/ic_folder_black_24dp"/>
+            <item
+                android:id="@+id/nav_genres"
+                android:title="@string/genres"
+                android:icon="@drawable/ic_folder_black_24dp" />
+            <item
+                android:id="@+id/nav_services"
+                android:title="@string/services"
+                android:icon="@drawable/ic_folder_black_24dp"/>
+        </menu>
+    </item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_settings"
+            android:title="@string/settings"
+            android:icon="@drawable/ic_menu_manage"/>
+    </group>
+
+</menu>

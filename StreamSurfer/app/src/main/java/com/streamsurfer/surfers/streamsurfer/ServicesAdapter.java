@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,7 +19,7 @@ public class ServicesAdapter extends BaseAdapter {
     private int[] images;
     private static LayoutInflater inflater = null;
 
-    public ServicesAdapter(Details activity, String[] titles, int[] images) {
+    public ServicesAdapter(DetailsActivity activity, String[] titles, int[] images) {
         this.titles = titles;
         context = activity;
         this.images = images;
