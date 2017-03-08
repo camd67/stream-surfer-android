@@ -35,8 +35,6 @@ public class ResultsActivity extends BaseActivity {
         String search = getIntent().getStringExtra(MainActivity.RESULTS);
         final ArrayList<String> genreList = getIntent().getStringArrayListExtra(AdvancedSearch.GENRELIST);
         final ArrayList<String> serviceList = getIntent().getStringArrayListExtra(AdvancedSearch.SERVICELIST);
-        final Map<Date, Entry> updated = entries.getUpdated();
-        final List<Date> sorted = entries.getSortedList();
 
         getAdvancedResults(search, genreList, serviceList);
 

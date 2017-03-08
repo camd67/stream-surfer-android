@@ -17,9 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class AdvancedSearch extends AppCompatActivity {
+public class AdvancedSearch extends BaseActivity {
 
     private EntriesApp entries = EntriesApp.getInstance();
+    private Map<String, Entry> entryMap = entries.getEntries();
     public static final String GENRELIST = "genre";
     public static final String SERVICELIST = "service";
 

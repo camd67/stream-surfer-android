@@ -1,5 +1,6 @@
 package com.streamsurfer.surfers.streamsurfer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -69,7 +70,8 @@ public class BaseActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.search_icon:
-                Toast.makeText(this, "Searching...", Toast.LENGTH_SHORT).show();
+                Intent search = new Intent(BaseActivity.this, MainActivity.class);
+                startActivity(search);
                 return true;
             case R.id.my_list_icon:
                 Toast.makeText(this, "My list", Toast.LENGTH_SHORT).show();
@@ -87,13 +89,17 @@ public class BaseActivity extends AppCompatActivity {
 
         switch (id){
             case R.id.nav_search:
-                Toast.makeText(this, "Searching...", Toast.LENGTH_SHORT).show();
+                Intent search = new Intent(BaseActivity.this, MainActivity.class);
+                startActivity(search);
                 break;
             case R.id.nav_advanced_search:
-                Toast.makeText(this, "Adv. Searching....", Toast.LENGTH_SHORT).show();
+                Intent advanced = new Intent(BaseActivity.this, AdvancedSearch.class);
+                startActivity(advanced);
                 break;
             case R.id.nav_genres:
-                Toast.makeText(this, "Genre category", Toast.LENGTH_SHORT).show();
+                Intent genre = new Intent(BaseActivity.this, BrowseActivity.class);
+                genre.putExtra(MainActivity.OPTION, "genres");
+                startActivity(genre);
                 break;
             case R.id.nav_popular:
                 Toast.makeText(this, "Popular category", Toast.LENGTH_SHORT).show();
@@ -102,13 +108,16 @@ public class BaseActivity extends AppCompatActivity {
                 Toast.makeText(this, "Recently updated category", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_services:
-                Toast.makeText(this, "Services category", Toast.LENGTH_SHORT).show();
+                Intent service = new Intent(BaseActivity.this, BrowseActivity.class);
+                service.putExtra(MainActivity.OPTION, "services");
+                startActivity(service);
                 break;
             case R.id.nav_my_list:
                 Toast.makeText(this, "My List", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_settings:
-                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                Intent settings = new Intent(BaseActivity.this, SettingsActivity.class);
+                startActivity(settings);
                 break;
         }
 

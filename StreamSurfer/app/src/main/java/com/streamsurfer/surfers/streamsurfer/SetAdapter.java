@@ -35,4 +35,8 @@ public class SetAdapter {
         }
         resultList.setAdapter(new ResultsAdapter(context, titlesLeft, titlesRight, imagesLeft, imagesRight));
     }
+
+    public void updatedAdapterSet(ListView resultList, List<Entry> results, Context context) {
+
+    }
 }
