@@ -79,9 +79,9 @@ public class MyListAdapter extends BaseAdapter {
         String uri = entry.getFilename().replace('/', '_');
         uri = uri.substring(0, uri.length() - 4);
         uri = "drawable/" + uri;
-        int imageResource = context.getResources().getIdentifier(uri, null, context.getPackageName());
+        int imageResource = res.getIdentifier(uri, null, context.getPackageName());
         if (imageResource != 0) {
-            thumbnail.setImageResource(imageResource);
+            thumbnail.setImageDrawable(res.getDrawable(imageResource));
         } else {
             thumbnail.setImageResource(R.mipmap.ic_launcher);
         }
