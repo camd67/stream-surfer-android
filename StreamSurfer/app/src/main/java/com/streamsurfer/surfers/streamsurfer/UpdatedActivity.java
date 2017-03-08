@@ -1,13 +1,15 @@
 package com.streamsurfer.surfers.streamsurfer;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -44,13 +46,27 @@ public class UpdatedActivity extends BaseActivity {
         for (int i = 0; i < results.size(); i ++) {
             if (even) {
                 titlesRight[i / 2] = results.get(i).getTitle();
-                //todo replace
-                imagesRight[i / 2] = R.mipmap.ic_launcher;
+                String uri = results.get(i).getThumbnail().replace('/', '_');
+                uri = uri.substring(0, uri.length() - 4);
+                uri = "drawable/" + uri;
+                int imageResource = this.getResources().getIdentifier(uri, null, this.getPackageName());
+                if (imageResource != 0) {
+                    imagesRight[i / 2] = imageResource;
+                } else {
+                    imagesRight[i / 2] = R.mipmap.ic_launcher;
+                }
                 updatedRight[i / 2] = updated.get(i);
             } else {
                 titlesLeft[i / 2] = results.get(i).getTitle();
-                //todo replace
-                imagesLeft[i / 2] = R.mipmap.ic_launcher;
+                String uri = results.get(i).getThumbnail().replace('/', '_');
+                uri = uri.substring(0, uri.length() - 4);
+                uri = "drawable/" + uri;
+                int imageResource = this.getResources().getIdentifier(uri, null, this.getPackageName());
+                if (imageResource != 0) {
+                    imagesLeft[i / 2] = imageResource;
+                } else {
+                    imagesLeft[i / 2] = R.mipmap.ic_launcher;
+                }
                 updatedLeft[i / 2] = updated.get(i);
             }
             even = !even;

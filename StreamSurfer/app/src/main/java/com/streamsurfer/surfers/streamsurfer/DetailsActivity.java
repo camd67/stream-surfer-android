@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +35,11 @@ public class DetailsActivity extends BaseActivity {
         final String[] url = new String[serviceSize];
         for (int i = 0; i < serviceSize; i++) {
             services[i] = serviceList.get(i).getName();
-            images[i] = R.mipmap.ic_launcher;
+            String uri = serviceList.get(i).getIcon().replace('/', '_');
+            uri = uri.substring(0, uri.length() - 4);
+            uri = "drawable/" + uri;
+            int imageResource = this.getResources().getIdentifier(uri, null, this.getPackageName());
+            images[i] = imageResource;
             url[i] = serviceList.get(i).getBaseUrl();
         }
         List<Episode> episodes = selected.getEpisodes();
@@ -52,6 +57,12 @@ public class DetailsActivity extends BaseActivity {
         TextView desc = (TextView) findViewById(R.id.entry_description);
         final ListView serviceView = (ListView) findViewById(R.id.services_list);
         ListView episodesView = (ListView) findViewById(R.id.episodes_list);
+        ImageView entryImage = (ImageView) findViewById(R.id.entry_image);
+        String uri = selected.getThumbnail().replace('/', '_');
+        uri = uri.substring(0, uri.length() - 4);
+        uri = "drawable/" + uri;
+        int imageResource = this.getResources().getIdentifier(uri, null, this.getPackageName());
+        entryImage.setImageResource(imageResource);
 
         final MyListManager manager = entries.getMyListManager(this);
         final Button addToList = (Button)findViewById(R.id.button_add_to_list);

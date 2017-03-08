@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.media.Rating;
 import android.net.Uri;
@@ -19,6 +21,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +78,17 @@ public class MyListAdapter extends BaseAdapter {
         rating.setStepSize(1);
         rating.setRating(entry.getRating());
         setStatusText(entry, status, res);
+        //TODO getFileName is null right now. Make sure that it gets the thumbnail name from the
+        //parsed json (unless I'm understanding this wrong)
+        String uri = entry.getFilename().replace('/', '_');
+        uri = uri.substring(0, uri.length() - 4);
+        uri = "drawable/" + uri;
+        int imageResource = context.getResources().getIdentifier(uri, null, context.getPackageName());
+        if (imageResource != 0) {
+            thumbnail.setImageResource(imageResource);
+        } else {
+            thumbnail.setImageResource(R.mipmap.ic_launcher);
+        }
 
         if(entry.getStatus() == ShowStatus.COMPLETE){
             plusOne.setVisibility(View.INVISIBLE);

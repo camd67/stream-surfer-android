@@ -114,9 +114,6 @@ public class BaseActivity extends AppCompatActivity {
                 genre.putExtra(MainActivity.OPTION, "genres");
                 startActivity(genre);
                 break;
-            case R.id.nav_popular:
-                Toast.makeText(this, "Popular category", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.nav_recently_updated:
                 Intent updated = new Intent(BaseActivity.this, UpdatedActivity.class);
                 startActivity(updated);

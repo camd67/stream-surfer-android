@@ -24,12 +24,26 @@ public class SetAdapter {
         for (int i = 0; i < results.size(); i ++) {
             if (even) {
                 titlesRight[i / 2] = results.get(i).getTitle();
-                //todo replace
-                imagesRight[i / 2] = R.mipmap.ic_launcher;
+                String uri = results.get(i).getThumbnail().replace('/', '_');
+                uri = uri.substring(0, uri.length() - 4);
+                uri = "drawable/" + uri;
+                int imageResource = context.getResources().getIdentifier(uri, null, context.getPackageName());
+                if (imageResource != 0) {
+                    imagesRight[i / 2] = imageResource;
+                } else {
+                    imagesRight[i / 2] = R.mipmap.ic_launcher;
+                }
             } else {
                 titlesLeft[i / 2] = results.get(i).getTitle();
-                //todo replace
-                imagesLeft[i / 2] = R.mipmap.ic_launcher;
+                String uri = results.get(i).getThumbnail().replace('/', '_');
+                uri = uri.substring(0, uri.length() - 4);
+                uri = "drawable/" + uri;
+                int imageResource = context.getResources().getIdentifier(uri, null, context.getPackageName());
+                if (imageResource != 0) {
+                    imagesLeft[i / 2] = imageResource;
+                } else {
+                    imagesLeft[i / 2] = R.mipmap.ic_launcher;
+                }
             }
             even = !even;
         }
