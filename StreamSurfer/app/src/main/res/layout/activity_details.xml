@@ -52,14 +52,28 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/entry_title"
-        android:textSize="25sp"
-        android:layout_weight="0.10"/>
+        android:layout_weight="0.10">
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/entry_title"/>
 
+
+        <Button
+            android:id="@+id/button_add_to_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/icon_my_list"
+            android:drawableLeft="@drawable/icon_my_list"
+            android:text="Add"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
     <TextView
         android:text="Description"
         android:layout_width="match_parent"

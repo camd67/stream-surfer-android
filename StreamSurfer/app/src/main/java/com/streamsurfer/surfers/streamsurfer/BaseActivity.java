@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "surfers.BaseActivity";
+    public static final String EXTRA_SELECTED_NAV_ITEM = "com.streamsurfer.surfers.SelectedNavItem";
 
     private DrawerLayout drawer;
     private NavigationView navView;
@@ -39,8 +40,12 @@ public class BaseActivity extends AppCompatActivity {
                 return handleNavMenuItemSelect(item);
             }
         });
+        int selectedItem = getIntent().getIntExtra(EXTRA_SELECTED_NAV_ITEM, -1);
+        if(selectedItem != -1){
+            navView.setCheckedItem(selectedItem);
+        }
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
+        toolbar.setNavigationIcon(R.drawable.icon_menu);
         setSupportActionBar(toolbar);
     }
 
@@ -74,7 +79,8 @@ public class BaseActivity extends AppCompatActivity {
                 startActivity(search);
                 return true;
             case R.id.my_list_icon:
-                Toast.makeText(this, "My list", Toast.LENGTH_SHORT).show();
+                Intent iList = new Intent(this, MyListActivity.class);
+                startActivity(iList);
                 return true;
             default:
                 // keep this, we need it if we don't know how to handle it
@@ -85,7 +91,7 @@ public class BaseActivity extends AppCompatActivity {
     private boolean handleNavMenuItemSelect(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        navView.setCheckedItem(id);
+        //navView.setCheckedItem(id);
 
         switch (id){
             case R.id.nav_search:
@@ -114,6 +120,9 @@ public class BaseActivity extends AppCompatActivity {
                 startActivity(service);
                 break;
             case R.id.nav_my_list:
+                Intent i = new Intent(this, MyListActivity.class);
+                i.putExtra(BaseActivity.EXTRA_SELECTED_NAV_ITEM, id);
+                startActivity(i);
                 Toast.makeText(this, "My List", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_settings:
@@ -124,6 +133,7 @@ public class BaseActivity extends AppCompatActivity {
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        // return false to not change color
+        return false;
     }
 }

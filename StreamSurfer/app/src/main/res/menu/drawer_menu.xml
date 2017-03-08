@@ -4,16 +4,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_search"
-            android:icon="@drawable/ic_search_black_24dp"
+            android:icon="@drawable/icon_search"
             android:title="@string/search" />
         <item
             android:id="@+id/nav_advanced_search"
-            android:icon="@drawable/ic_zoom_in_black_24dp"
+            android:icon="@drawable/icon_advanced_search"
             android:title="@string/advanced_search" />
         <item
             android:id="@+id/nav_my_list"
             android:title="@string/my_list"
-            android:icon="@drawable/ic_book_black_24dp"/>
+            android:icon="@drawable/icon_my_list"/>
     </group>
 
     <item android:title="@string/categories">
@@ -21,26 +21,26 @@
             <item
                 android:id="@+id/nav_popular"
                 android:title="@string/popular"
-                android:icon="@drawable/ic_folder_black_24dp"/>
+                android:icon="@drawable/icon_folder"/>
             <item
                 android:id="@+id/nav_recently_updated"
                 android:title="@string/recently_updated"
-                android:icon="@drawable/ic_folder_black_24dp"/>
+                android:icon="@drawable/icon_folder"/>
             <item
                 android:id="@+id/nav_genres"
                 android:title="@string/genres"
-                android:icon="@drawable/ic_folder_black_24dp" />
+                android:icon="@drawable/icon_folder" />
             <item
                 android:id="@+id/nav_services"
                 android:title="@string/services"
-                android:icon="@drawable/ic_folder_black_24dp"/>
+                android:icon="@drawable/icon_folder"/>
         </menu>
     </item>
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_settings"
             android:title="@string/settings"
-            android:icon="@drawable/ic_menu_manage"/>
+            android:icon="@drawable/icon_wrench"/>
     </group>
 
 </menu>

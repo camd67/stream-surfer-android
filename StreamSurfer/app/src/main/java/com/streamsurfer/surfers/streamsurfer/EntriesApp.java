@@ -1,5 +1,6 @@
 package com.streamsurfer.surfers.streamsurfer;
 
+import android.content.Context;
 import android.app.DownloadManager;
 import android.os.Environment;
 import android.util.JsonReader;
@@ -29,9 +30,13 @@ public class EntriesApp extends android.app.Application {
     private Map<String, List<Entry>> serviceMap = new HashMap<>();
     private List<String> genreList = new ArrayList<>();
     private List<String> serviceList = new ArrayList<>();
+    private MyListManager myListManager;
     private Map<Date, Entry> updated = new HashMap<>();
     private static EntriesApp instance = null;
     private static final String TAG = "EntriesApp";
+
+
+    public EntriesApp(){}
 
     @Override
     public void onCreate() {
@@ -43,6 +48,13 @@ public class EntriesApp extends android.app.Application {
             instance = new EntriesApp();
         }
         return instance;
+    }
+
+    public MyListManager getMyListManager(Context context){
+        if(myListManager == null){
+            myListManager = new MyListManager(context.getApplicationContext());
+        }
+        return myListManager;
     }
 
     public Map<String, Entry> getEntries() {

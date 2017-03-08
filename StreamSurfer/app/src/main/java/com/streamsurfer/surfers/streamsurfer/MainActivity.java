@@ -16,7 +16,10 @@ import android.os.Environment;
 import android.os.PowerManager;
 import android.support.annotation.RequiresApi;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -123,6 +126,20 @@ public class MainActivity extends BaseActivity {
                     Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
                     //startActivity(settings);
                     startActivity(activity);
+                }
+            });
+
+            searchInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                @Override
+                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                    if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                        String search = searchInput.getText().toString().toLowerCase();
+                        Intent activity = new Intent(MainActivity.this, ResultsActivity.class);
+                        activity.putExtra(RESULTS, search);
+                        startActivity(activity);
+                        return true;
+                    }
+                    return false;
                 }
             });
 
