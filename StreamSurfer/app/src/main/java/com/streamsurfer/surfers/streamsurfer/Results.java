@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -36,6 +38,8 @@ public class Results extends AppCompatActivity {
         String search = getIntent().getStringExtra(MainActivity.RESULTS);
         final ArrayList<String> genreList = getIntent().getStringArrayListExtra(AdvancedSearch.GENRELIST);
         final ArrayList<String> serviceList = getIntent().getStringArrayListExtra(AdvancedSearch.SERVICELIST);
+        final Map<Date, Entry> updated = entries.getUpdated();
+        final List<Date> sorted = entries.getSortedList();
 
         getAdvancedResults(search, genreList, serviceList);
 

@@ -6,4 +6,7 @@
     <string name="service">Service</string>
     <string name="advanced_search">Advanced Search</string>
     <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="notify_when_shows_update">Notify when shows update</string>
+    <string name="send_demo_notification">Send demo notification</string>
 </resources>
