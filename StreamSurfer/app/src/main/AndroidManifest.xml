@@ -21,7 +21,7 @@
         <activity android:name=".ResultsActivity" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".BrowseActivity" />
-        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".BaseActivity" />
     </application>
 
 </manifest>
