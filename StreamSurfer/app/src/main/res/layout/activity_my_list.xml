@@ -4,10 +4,26 @@
     android:id="@+id/activity_my_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.streamsurfer.surfers.streamsurfer.MyListActivity">
 
+    <TextView
+        android:id="@+id/text_my_list_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/header_text_size"
+        android:text="@string/my_list" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/text_my_list_header"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/my_list"
+        android:layout_marginTop="25dp"
+        android:dividerHeight="15dp"
+        android:divider="@android:color/transparent"
+        />
 </RelativeLayout>
