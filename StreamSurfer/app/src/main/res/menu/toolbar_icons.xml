@@ -2,12 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/search_icon"
-        android:icon="@drawable/ic_search_black_24dp"
+        android:icon="@drawable/icon_search"
         android:title="@string/search"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/my_list_icon"
-        android:icon="@drawable/ic_book_black_24dp"
+        android:icon="@drawable/icon_my_list"
         android:title="@string/my_list"
         app:showAsAction="ifRoom"/>
 

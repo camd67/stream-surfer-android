@@ -9,9 +9,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/**
- * Created by Jack on 3/2/2017.
- */
 
 public class ServicesAdapter extends BaseAdapter {
     private String[] titles;
