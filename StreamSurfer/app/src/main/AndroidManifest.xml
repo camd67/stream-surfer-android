@@ -22,7 +22,6 @@
         <activity android:name=".DetailsActivity" />
         <activity android:name=".BrowseActivity" />
         <activity android:name=".BaseActivity" />
-        <activity android:name=".MyListActivity"/>
     </application>
 
 </manifest>
