@@ -1,23 +1,21 @@
 package com.streamsurfer.surfers.streamsurfer;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Adapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class Details extends AppCompatActivity {
+public class DetailsActivity extends BaseActivity {
 
-    private Entries entries = Entries.getInstance();
+    private EntriesApp entries = EntriesApp.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        String selectedString = getIntent().getStringExtra(Results.SELECTED);
+        String selectedString = getIntent().getStringExtra(ResultsActivity.SELECTED);
         Entry selected = entries.getEntries().get(selectedString);
         List<Service> serviceList = selected.getServices();
         int serviceSize = serviceList.size();
@@ -47,7 +45,7 @@ public class Details extends AppCompatActivity {
 
         title.setText(selected.getTitle());
         desc.setText(selected.getSynopsis());
-        serviceView.setAdapter(new ServicesAdapter(Details.this, services, images));
-        episodesView.setAdapter(new EpisodesAdapter(Details.this, episodeNumber, seasonNumber, episodeTitles));
+        serviceView.setAdapter(new ServicesAdapter(DetailsActivity.this, services, images));
+        episodesView.setAdapter(new EpisodesAdapter(DetailsActivity.this, episodeNumber, seasonNumber, episodeTitles));
     }
 }

@@ -4,9 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Jack on 3/1/2017.
- */
 
 public class Entry implements Serializable {
     private String title;
