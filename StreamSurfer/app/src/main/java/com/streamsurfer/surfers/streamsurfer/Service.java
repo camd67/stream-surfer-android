@@ -1,7 +1,6 @@
 package com.streamsurfer.surfers.streamsurfer;
 
 
-
 public class Service {
     private String name;
     private String baseUrl;
@@ -23,5 +22,16 @@ public class Service {
 
     public String getIcon() {
         return icon;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object instanceof Service) {
+            Service check = (Service) object;
+            if (check.getName().toLowerCase().equals(this.getName().toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

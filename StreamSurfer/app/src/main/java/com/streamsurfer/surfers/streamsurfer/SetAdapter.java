@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.ListView;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Jack on 3/5/2017.
@@ -33,5 +34,9 @@ public class SetAdapter {
             even = !even;
         }
         resultList.setAdapter(new ResultsAdapter(context, titlesLeft, titlesRight, imagesLeft, imagesRight));
+    }
+
+    public void updatedAdapterSet(ListView resultList, List<Entry> results, Context context) {
+
     }
 }

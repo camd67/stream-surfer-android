@@ -6,6 +6,8 @@
     android:id="@+id/linear_layout"
     android:weightSum="1">
 
+
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dp"
@@ -27,28 +29,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:src="@mipmap/ic_launcher"
-                android:layout_weight="0.80"
+                android:layout_weight="0.75"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:background="#303030"/>
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.25"
                 android:background="#444444">
 
                 <TextView
                     android:id="@+id/title_left"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="0dp"
                     android:textSize="15sp"
                     android:textColor="#FFFFFF"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:layout_weight="0.75"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="TextView"
+                    android:layout_weight="0.25"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -81,7 +91,7 @@
                 android:background="#303030"/>
 
             <LinearLayout
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.20"
@@ -100,6 +110,4 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>

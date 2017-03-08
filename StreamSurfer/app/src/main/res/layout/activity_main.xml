@@ -12,6 +12,15 @@
         android:layout_marginBottom="93dp"
         android:id="@+id/search_button" />
 
+    <Button
+        android:text="@string/advanced_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:id="@+id/advanced_search_button"
+        android:layout_below="@+id/search_input"
+        android:layout_centerHorizontal="true" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,3 +31,4 @@
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
+

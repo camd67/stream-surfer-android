@@ -3,6 +3,8 @@
     package="com.streamsurfer.surfers.streamsurfer">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".EntriesApp"
@@ -17,12 +19,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity
         <activity android:name=".MyListActivity" />
+        <activity android:name=".AdvancedSearch" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".ResultsActivity" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".BrowseActivity" />
         <activity android:name=".BaseActivity" />
+        <activity android:name=".UpdatedActivity"/>
     </application>
 
 </manifest>

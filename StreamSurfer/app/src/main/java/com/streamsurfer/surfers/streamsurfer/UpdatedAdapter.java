@@ -5,14 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * Created by Jack on 3/8/2017.
+ */
 
-
-public class ResultsAdapter extends BaseAdapter {
+public class UpdatedAdapter extends BaseAdapter {
     private String[] resultLeft;
     private String[] resultRight;
     private Context context;
@@ -20,7 +21,7 @@ public class ResultsAdapter extends BaseAdapter {
     private int[] imageIdRight;
     private static LayoutInflater inflater = null;
 
-    public ResultsAdapter(Context activity, String[] titlesLeft, String[] titlesRight, int[] imagesLeft, int[] imagesRight) {
+    public UpdatedAdapter(Context activity, String[] titlesLeft, String[] titlesRight, int[] imagesLeft, int[] imagesRight) {
         resultLeft = titlesLeft;
         resultRight = titlesRight;
         context = activity;

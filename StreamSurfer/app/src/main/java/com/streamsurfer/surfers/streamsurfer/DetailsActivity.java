@@ -1,11 +1,18 @@
 package com.streamsurfer.surfers.streamsurfer;
 
+
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
+import android.view.View
 import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 public class DetailsActivity extends BaseActivity {
@@ -19,11 +26,11 @@ public class DetailsActivity extends BaseActivity {
 
         String selectedString = getIntent().getStringExtra(ResultsActivity.SELECTED);
         final Entry selected = entries.getEntries().get(selectedString);
-        List<Service> serviceList = selected.getServices();
+        final List<Service> serviceList = selected.getServices();
         int serviceSize = serviceList.size();
         String[] services = new String[serviceSize];
         int[] images = new int[serviceSize];
-        String[] url = new String[serviceSize];
+        final String[] url = new String[serviceSize];
         for (int i = 0; i < serviceSize; i++) {
             services[i] = serviceList.get(i).getName();
             images[i] = R.mipmap.ic_launcher;
@@ -42,7 +49,7 @@ public class DetailsActivity extends BaseActivity {
 
         TextView title = (TextView) findViewById(R.id.entry_title);
         TextView desc = (TextView) findViewById(R.id.entry_description);
-        ListView serviceView = (ListView) findViewById(R.id.services_list);
+        final ListView serviceView = (ListView) findViewById(R.id.services_list);
         ListView episodesView = (ListView) findViewById(R.id.episodes_list);
 
         final MyListManager manager = entries.getMyListManager(this);
@@ -60,7 +67,17 @@ public class DetailsActivity extends BaseActivity {
 
         title.setText(selected.getTitle());
         desc.setText(selected.getSynopsis());
+
         serviceView.setAdapter(new ServicesAdapter(DetailsActivity.this, services, images));
         episodesView.setAdapter(new EpisodesAdapter(DetailsActivity.this, episodeNumber, seasonNumber, episodeTitles));
+
+        serviceView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String urlName = url[position];
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlName));
+                startActivity(browserIntent);
+            }
+        });
     }
 }

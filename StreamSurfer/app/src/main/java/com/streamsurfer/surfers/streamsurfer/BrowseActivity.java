@@ -1,9 +1,11 @@
 package com.streamsurfer.surfers.streamsurfer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -15,7 +17,6 @@ public class BrowseActivity extends BaseActivity implements AdapterView.OnItemSe
     private EntriesApp entries = EntriesApp.getInstance();
     private Map<String, List<Entry>> results;
     private SetAdapter setAdapter = new SetAdapter();
-    private TextView title;
     private ListView specificResultList;
 
     @Override
@@ -25,7 +26,6 @@ public class BrowseActivity extends BaseActivity implements AdapterView.OnItemSe
 
         String option = getIntent().getStringExtra(MainActivity.OPTION);
         specificResultList = (ListView) findViewById(R.id.specific_results_list);
-        title = (TextView) findViewById(R.id.search_title);
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
 
@@ -42,11 +42,27 @@ public class BrowseActivity extends BaseActivity implements AdapterView.OnItemSe
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         String name = parent.getItemAtPosition(pos).toString();
-        title.setText(name.toUpperCase());
         setAdapter.customAdapterSet(specificResultList, results.get(name.toUpperCase()), this);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
         // Another interface callback
+    }
+
+    public void clickHandlerLeft(View v) {
+        clickHandler(v, R.id.title_left);
+    }
+
+    public void clickHandlerRight(View v) {
+        clickHandler(v, R.id.title_right);
+    }
+
+    private void clickHandler(View v, int id) {
+        LinearLayout row = (LinearLayout) v.getParent();
+        TextView title = (TextView) row.findViewById(id);
+        String selected = title.getText().toString().toLowerCase();
+        Intent detail = new Intent(BrowseActivity.this, DetailsActivity.class);
+        detail.putExtra(ResultsActivity.SELECTED, selected);
+        startActivity(detail);
     }
 }

@@ -1,6 +1,7 @@
 package com.streamsurfer.surfers.streamsurfer;
 
 import android.content.Context;
+import android.app.DownloadManager;
 import android.os.Environment;
 import android.util.JsonReader;
 import android.util.JsonToken;
@@ -9,10 +10,17 @@ import android.util.Log;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
+import java.util.SortedSet;
 
 
 public class EntriesApp extends android.app.Application {
@@ -22,6 +30,7 @@ public class EntriesApp extends android.app.Application {
     private List<String> genreList = new ArrayList<>();
     private List<String> serviceList = new ArrayList<>();
     private MyListManager myListManager;
+    private Map<Date, Entry> updated = new HashMap<>();
     private static EntriesApp instance = null;
     private static final String TAG = "EntriesApp";
 
@@ -49,8 +58,7 @@ public class EntriesApp extends android.app.Application {
 
     public Map<String, Entry> getEntries() {
         if (entryMap.isEmpty()) {
-            File directory = Environment.getExternalStorageDirectory();
-            createEntries(new File(directory + "/data.json"));
+            createEntries();
         }
         return new HashMap<>(entryMap);
     }
@@ -65,24 +73,41 @@ public class EntriesApp extends android.app.Application {
 
     public Map<String, List<Entry>> getGenreMap() {
         if (genreMap.isEmpty()) {
-            File directory = Environment.getExternalStorageDirectory();
-            createEntries(new File(directory + "/data.json"));
+            createEntries();
         }
         return new HashMap<>(genreMap);
     }
 
     public Map<String, List<Entry>> getServiceMap() {
         if (serviceMap.isEmpty()) {
-            File directory = Environment.getExternalStorageDirectory();
-            createEntries(new File(directory + "/data.json"));
+            createEntries();
         }
         return new HashMap<>(serviceMap);
     }
 
-    private void createEntries(File file) {
-        Log.i(TAG, "Creating entries from " + file.getAbsolutePath());
+    public Map<Date, Entry> getUpdated() {
+        if (updated.isEmpty()) {
+            createEntries();
+        }
+        return new HashMap<>(updated);
+    }
+
+    public List<Date> getSortedList() {
+        return asSortedList(updated.keySet());
+    }
+
+    private static
+    <T extends Comparable<? super T>> List<T> asSortedList(Collection<T> c) {
+        List<T> list = new ArrayList<T>(c);
+        java.util.Collections.sort(list);
+        return list;
+    }
+
+    private void createEntries() {
         try {
-            JsonReader reader = new JsonReader(new FileReader(file));
+            File f = new File(Environment.getExternalStorageDirectory().getPath() + "/sampleData.json");
+            Log.i(TAG, "Creating entries from " + f.getAbsolutePath());
+            JsonReader reader = new JsonReader(new FileReader(f));
             reader.beginArray();
             while (reader.hasNext()) {
                 reader.beginObject();
@@ -95,9 +120,12 @@ public class EntriesApp extends android.app.Application {
                     synonyms.add(reader.nextString());
                 }
                 reader.endArray();
-                reader.skipValue();
-                String synopsis = reader.nextString();
-                reader.skipValue();
+                String key = reader.nextName();
+                String synopsis = "";
+                if (key.equals("synopsis")) {
+                    synopsis = reader.nextString();
+                    reader.skipValue();
+                }
                 String thumbnail = reader.nextString();
                 reader.skipValue();
                 List<String> genres = new ArrayList<String>();
@@ -138,6 +166,7 @@ public class EntriesApp extends android.app.Application {
                 reader.skipValue();
                 List<Episode> episodes = new ArrayList<Episode>();
                 reader.beginArray();
+                Date mostRecent = null;
                 while (reader.peek() != JsonToken.END_ARRAY) {
                     reader.beginObject();
                     reader.skipValue();
@@ -148,6 +177,16 @@ public class EntriesApp extends android.app.Application {
                     int sNumber = reader.nextInt();
                     reader.skipValue();
                     String release = reader.nextString();
+                    String year = release.substring(0, 4);
+                    String month = release.substring(5, 7);
+                    String day = release.substring(8);
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+                    Date strDate = sdf.parse(release);
+                    if (mostRecent == null) {
+                        mostRecent = strDate;
+                    } else if (mostRecent.before(strDate)) {
+                            mostRecent = strDate;
+                    }
                     reader.skipValue();
                     int length = reader.nextInt();
                     reader.skipValue();
@@ -172,10 +211,13 @@ public class EntriesApp extends android.app.Application {
                 for (Service service : services) {
                     addToMap(serviceMap, e, service.getName().toUpperCase());
                 }
+                updated.put(mostRecent, e);
             }
             reader.endArray();
         } catch (IOException e) {
             Log.e("JSON", e.toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 

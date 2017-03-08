@@ -1,15 +1,20 @@
 package com.streamsurfer.surfers.streamsurfer;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -28,33 +33,51 @@ public class ResultsActivity extends BaseActivity {
         setContentView(R.layout.activity_results);
 
         String search = getIntent().getStringExtra(MainActivity.RESULTS);
-        results = getResults(search);
+        final ArrayList<String> genreList = getIntent().getStringArrayListExtra(AdvancedSearch.GENRELIST);
+        final ArrayList<String> serviceList = getIntent().getStringArrayListExtra(AdvancedSearch.SERVICELIST);
+
+        getAdvancedResults(search, genreList, serviceList);
 
         final ListView resultList = (ListView) findViewById(R.id.result_list);
-        final EditText input = (EditText) findViewById(R.id.results_input);
-        input.setHint(search);
-        Button searchButton = (Button) findViewById(R.id.results_button);
-
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String newSearch = input.getText().toString().toLowerCase();
-                results = getResults(newSearch);
-                setAdapter.customAdapterSet(resultList, results, ResultsActivity.this);
-            }
-        });
+        TextView title = (TextView) findViewById(R.id.results_title);
+        title.setText(search);
         setAdapter.customAdapterSet(resultList, results, this);
     }
 
-    private List<Entry> getResults(String search) {
-        List<Entry> results = new ArrayList<>();
+    private void getAdvancedResults(String search, ArrayList<String> genreList, ArrayList<String> serviceList) {
+        results = new ArrayList<>();
+        List<Entry> temporaryResults = new ArrayList<>();
         Set<String> entryKeys = entryMap.keySet();
         for (String s : entryKeys) {
             if (s.contains(search)) {
-                results.add(entryMap.get(s));
+                temporaryResults.add(entryMap.get(s));
             }
         }
-        return results;
+        for (Entry e : temporaryResults) {
+            Boolean removeGenre = false;
+            Boolean removeService = false;
+            List<String> genres = e.getGenres();
+            if (genreList != null) {
+                for (String genre : genreList) {
+                    if (!genres.contains(genre.toLowerCase())) {
+                        removeGenre = true;
+                        break;
+                    }
+                }
+            }
+            List<Service> services = e.getServices();
+            if (serviceList != null) {
+                for (String service : serviceList) {
+                    if (!services.contains(new Service(service, null, null))) {
+                        removeService = true;
+                        break;
+                    }
+                }
+            }
+            if (!removeGenre && !removeService) {
+                results.add(e);
+            }
+        }
     }
 
     public void clickHandlerLeft(View v) {
