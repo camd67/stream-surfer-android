@@ -6,9 +6,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:openDrawer="start"
     tools:context="com.streamsurfer.surfers.streamsurfer.BaseActivity">
-
+    <!-- put this above to *test* look of drawer: tools:openDrawer="start" -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

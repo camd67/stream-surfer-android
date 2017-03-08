@@ -30,6 +30,10 @@ public class ListEntry {
         constrainRating();
     }
 
+    public ListEntry(String title, String status, String epsSeen, String totalEps, String rating, String filename){
+        this(title, ShowStatus.valueOf(status), Integer.parseInt(epsSeen), Integer.parseInt(totalEps), Integer.parseInt(rating), filename);
+    }
+
     public void setRating(int rating) {
         this.rating = rating;
         constrainRating();
