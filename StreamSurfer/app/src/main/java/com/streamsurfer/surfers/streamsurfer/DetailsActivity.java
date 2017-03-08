@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -53,14 +54,16 @@ public class DetailsActivity extends BaseActivity {
         ListView episodesView = (ListView) findViewById(R.id.episodes_list);
 
         final MyListManager manager = entries.getMyListManager(this);
-        Button addToList = (Button)findViewById(R.id.button_add_to_list);
+        final Button addToList = (Button)findViewById(R.id.button_add_to_list);
         if(manager.listContainsTitle(selected.getTitle())){
             addToList.setEnabled(false);
         } else {
             addToList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    addToList.setEnabled(false);
                     manager.addEntryToList(new ListEntry(selected.getTitle(), ShowStatus.PLAN_TO_WATCH, 0, selected.getEpisodes().size(), 0, selected.getThumbnail()));
+                    Toast.makeText(DetailsActivity.this, "Added " + selected.getTitle() + " to your list!", Toast.LENGTH_SHORT).show();
                 }
             });
         }

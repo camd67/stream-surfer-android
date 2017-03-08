@@ -50,6 +50,12 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        EntriesApp.getInstance().getMyListManager(this).saveMyListData(this);
+        super.onStop();
+    }
+
+    @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -57,6 +63,7 @@ public class BaseActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_icons, menu);

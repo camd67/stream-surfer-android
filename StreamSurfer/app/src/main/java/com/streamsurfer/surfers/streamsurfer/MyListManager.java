@@ -72,6 +72,10 @@ public class MyListManager {
         }
     }
 
+    public void removeEntry(ListEntry entry){
+        myList.remove(entry);
+    }
+
     public boolean listContainsTitle(String title){
         for (ListEntry e: myList) {
             if(e.getTitle().equals(title)){
