@@ -95,7 +95,8 @@ public class BaseActivity extends AppCompatActivity {
 
         switch (id){
             case R.id.nav_search:
-                Toast.makeText(this, "Searching...", Toast.LENGTH_SHORT).show();
+                Intent iSearch = new Intent(this, MainActivity.class);
+                startActivity(iSearch);
                 break;
             case R.id.nav_advanced_search:
                 Toast.makeText(this, "Adv. Searching....", Toast.LENGTH_SHORT).show();

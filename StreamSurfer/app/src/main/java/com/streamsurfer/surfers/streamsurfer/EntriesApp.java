@@ -40,9 +40,9 @@ public class EntriesApp extends android.app.Application {
         return instance;
     }
 
-    public MyListManager getMyListManager(){
+    public MyListManager getMyListManager(Context context){
         if(myListManager == null){
-            myListManager = new MyListManager(getApplicationContext());
+            myListManager = new MyListManager(context.getApplicationContext());
         }
         return myListManager;
     }

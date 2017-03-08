@@ -1,7 +1,10 @@
 package com.streamsurfer.surfers.streamsurfer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.media.Image;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +60,7 @@ public class MyListAdapter extends BaseAdapter {
         final TextView status = (TextView)row.findViewById(R.id.my_list_status);
         TextView rating = (TextView)row.findViewById(R.id.my_list_rating);
         ImageButton plusOne = (ImageButton)row.findViewById(R.id.my_list_plus_one);
-        Button edit = (Button)row.findViewById(R.id.my_list_edit);
+        ImageButton play = (ImageButton)row.findViewById(R.id.my_list_watch);
 
         final Resources res = context.getResources();
         setText(entry.getTitle(), title);
@@ -75,10 +78,12 @@ public class MyListAdapter extends BaseAdapter {
                 setStatusText(entry, status, res);
             }
         });
-        edit.setOnClickListener(new View.OnClickListener() {
+        play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "To implement edit....", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context, DetailsActivity.class);
+                i.putExtra(ResultsActivity.SELECTED, entry.getTitle());
+                context.startActivity(i);
             }
         });
         return  row;

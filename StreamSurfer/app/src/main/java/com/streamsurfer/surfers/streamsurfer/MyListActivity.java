@@ -10,7 +10,7 @@ public class MyListActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_list);
 
-        MyListManager myListManager = EntriesApp.getInstance().getMyListManager();
+        MyListManager myListManager = EntriesApp.getInstance().getMyListManager(this);
         ListView myList = (ListView)findViewById(R.id.my_list);
         MyListAdapter adapter = new MyListAdapter(this, myListManager.getAllEntries());
         myList.setAdapter(adapter);

@@ -55,23 +55,17 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/edit_entry"
-                android:id="@+id/my_list_edit"
-                android:drawableLeft="@drawable/icon_edit_pencil"
-                android:drawableStart="@drawable/icon_edit_pencil"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/my_list_watch"
+                android:src="@drawable/icon_play"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/icon_play"/>
+                android:layout_toRightOf="@+id/my_list_plus_one"
+                android:layout_toEndOf="@+id/my_list_plus_one"
+                android:layout_marginLeft="21dp"
+                android:layout_marginStart="21dp" />
         </RelativeLayout>
     </RelativeLayout>
 

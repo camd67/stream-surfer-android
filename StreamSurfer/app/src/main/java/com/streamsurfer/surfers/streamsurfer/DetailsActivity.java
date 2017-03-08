@@ -45,7 +45,7 @@ public class DetailsActivity extends BaseActivity {
         ListView serviceView = (ListView) findViewById(R.id.services_list);
         ListView episodesView = (ListView) findViewById(R.id.episodes_list);
 
-        final MyListManager manager = entries.getMyListManager();
+        final MyListManager manager = entries.getMyListManager(this);
         Button addToList = (Button)findViewById(R.id.button_add_to_list);
         if(manager.listContainsTitle(selected.getTitle())){
             addToList.setEnabled(false);
