@@ -105,7 +105,8 @@ public class BaseActivity extends AppCompatActivity {
                 Toast.makeText(this, "Popular category", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_recently_updated:
-                Toast.makeText(this, "Recently updated category", Toast.LENGTH_SHORT).show();
+                Intent updated = new Intent(BaseActivity.this, UpdatedActivity.class);
+                startActivity(updated);
                 break;
             case R.id.nav_services:
                 Intent service = new Intent(BaseActivity.this, BrowseActivity.class);
