@@ -35,7 +35,7 @@ public class MyListManager {
             BufferedReader reader = new BufferedReader(new FileReader(dataFile));
             String line = reader.readLine();
             while(line != null){
-                String[] data = decodeLine(line).split(DATA_SEPARATOR);
+                String[] data = line.split(DATA_SEPARATOR);
                 ListEntry entry = new ListEntry(data[0], data[1], data[2], data[3], data[4], data[5]);
                 myList.add(entry);
                 line = reader.readLine();
@@ -72,11 +72,13 @@ public class MyListManager {
         }
     }
 
-    private String encodeLine(String line){
-        return line.replaceAll(DATA_SEPARATOR, DATA_SEPARATOR + DATA_SEPARATOR);
-    }
-    private String decodeLine(String line){
-        return line.replaceAll(DATA_SEPARATOR + DATA_SEPARATOR, DATA_SEPARATOR);
+    public boolean listContainsTitle(String title){
+        for (ListEntry e: myList) {
+            if(e.getTitle().equals(title)){
+                return  true;
+            }
+        }
+        return false;
     }
 
     public void addEntryToList(ListEntry toAdd){

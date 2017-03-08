@@ -1,6 +1,8 @@
 package com.streamsurfer.surfers.streamsurfer;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,7 +18,7 @@ public class DetailsActivity extends BaseActivity {
         setContentView(R.layout.activity_details);
 
         String selectedString = getIntent().getStringExtra(ResultsActivity.SELECTED);
-        Entry selected = entries.getEntries().get(selectedString);
+        final Entry selected = entries.getEntries().get(selectedString);
         List<Service> serviceList = selected.getServices();
         int serviceSize = serviceList.size();
         String[] services = new String[serviceSize];
@@ -42,6 +44,19 @@ public class DetailsActivity extends BaseActivity {
         TextView desc = (TextView) findViewById(R.id.entry_description);
         ListView serviceView = (ListView) findViewById(R.id.services_list);
         ListView episodesView = (ListView) findViewById(R.id.episodes_list);
+
+        final MyListManager manager = entries.getMyListManager();
+        Button addToList = (Button)findViewById(R.id.button_add_to_list);
+        if(manager.listContainsTitle(selected.getTitle())){
+            addToList.setEnabled(false);
+        } else {
+            addToList.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    manager.addEntryToList(new ListEntry(selected.getTitle(), ShowStatus.PLAN_TO_WATCH, 0, selected.getEpisodes().size(), 0, selected.getThumbnail()));
+                }
+            });
+        }
 
         title.setText(selected.getTitle());
         desc.setText(selected.getSynopsis());
