@@ -57,9 +57,9 @@ public class EntriesApp extends android.app.Application {
         return myListManager;
     }
 
-    public Map<String, Entry> getEntries() {
+    public Map<String, Entry> getEntries(Context context) {
         if (entryMap.isEmpty()) {
-            createEntries();
+            createEntries(context);
         }
         return new HashMap<>(entryMap);
     }
@@ -72,23 +72,23 @@ public class EntriesApp extends android.app.Application {
         return serviceList.toArray(new String[serviceList.size()]);
     }
 
-    public Map<String, List<Entry>> getGenreMap() {
+    public Map<String, List<Entry>> getGenreMap(Context context) {
         if (genreMap.isEmpty()) {
-            createEntries();
+            createEntries(context);
         }
         return new HashMap<>(genreMap);
     }
 
-    public Map<String, List<Entry>> getServiceMap() {
+    public Map<String, List<Entry>> getServiceMap(Context context) {
         if (serviceMap.isEmpty()) {
-            createEntries();
+            createEntries(context);
         }
         return new HashMap<>(serviceMap);
     }
 
-    public Map<Date, Entry> getUpdated() {
+    public Map<Date, Entry> getUpdated(Context context) {
         if (updated.isEmpty()) {
-            createEntries();
+            createEntries(context);
         }
         return new HashMap<>(updated);
     }
@@ -106,9 +106,9 @@ public class EntriesApp extends android.app.Application {
         return shallowCopy;
     }
 
-    private void createEntries() {
+    private void createEntries(Context context) {
         try {
-            File f = new File(Environment.getExternalStorageDirectory().getPath() + "/sampleData.json");
+            File f = new File(context.getFilesDir(), "sampleData.json");
             Log.i(TAG, "Creating entries from " + f.getAbsolutePath());
             JsonReader reader = new JsonReader(new FileReader(f));
             reader.beginArray();

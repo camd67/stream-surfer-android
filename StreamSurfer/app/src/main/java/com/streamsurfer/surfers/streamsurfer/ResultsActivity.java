@@ -23,7 +23,7 @@ public class ResultsActivity extends BaseActivity {
 
     private EntriesApp entries = EntriesApp.getInstance();
     public static final String SELECTED = "selected";
-    private Map<String, Entry> entryMap = entries.getEntries();
+    private Map<String, Entry> entryMap;
     private List<Entry> results;
     private SetAdapter setAdapter = new SetAdapter();
 
@@ -31,6 +31,7 @@ public class ResultsActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
+        entryMap = entries.getEntries(this);
 
         String search = getIntent().getStringExtra(MainActivity.RESULTS);
         final ArrayList<String> genreList = getIntent().getStringArrayListExtra(AdvancedSearch.GENRELIST);

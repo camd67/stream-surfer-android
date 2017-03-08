@@ -63,8 +63,6 @@ public class MyListAdapter extends BaseAdapter {
         }
 
         ImageView thumbnail = (ImageView)row.findViewById(R.id.my_list_thumbnail);
-        // TODO: Jack, insert image of show here (not episode)
-        // ListEntry (entry here) has a getFilename method that gets the filename
         TextView title = (TextView)row.findViewById(R.id.my_list_title_header);
         final TextView status = (TextView)row.findViewById(R.id.my_list_status);
         RatingBar rating = (RatingBar) row.findViewById(R.id.my_list_rating);
@@ -78,8 +76,6 @@ public class MyListAdapter extends BaseAdapter {
         rating.setStepSize(1);
         rating.setRating(entry.getRating());
         setStatusText(entry, status, res);
-        //TODO getFileName is null right now. Make sure that it gets the thumbnail name from the
-        //parsed json (unless I'm understanding this wrong)
         String uri = entry.getFilename().replace('/', '_');
         uri = uri.substring(0, uri.length() - 4);
         uri = "drawable/" + uri;

@@ -1,28 +1,18 @@
 package com.streamsurfer.surfers.streamsurfer;
 
-import android.Manifest;
 import android.app.DownloadManager;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.os.Environment;
-import android.os.PowerManager;
-import android.support.annotation.RequiresApi;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Environment;
+import android.support.annotation.RequiresApi;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,9 +21,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class MainActivity extends BaseActivity {
 
@@ -78,7 +66,7 @@ public class MainActivity extends BaseActivity {
 
                 // download the file
                 input = connection.getInputStream();
-                temp = new File(Environment.getExternalStorageDirectory(), "temp.json");
+                temp = new File(context.getFilesDir(), "temp.json");
                 output = new FileOutputStream(temp);
 
                 byte data[] = new byte[4096];
@@ -86,7 +74,7 @@ public class MainActivity extends BaseActivity {
                 while ((count = input.read(data)) != -1) {
                     output.write(data, 0, count);
                 }
-                File old = new File(Environment.getExternalStorageDirectory(), "sampleData.json");
+                File old = new File(context.getFilesDir(), "sampleData.json");
                 old.delete();
                 temp.renameTo(old);
             } catch (Exception e) {

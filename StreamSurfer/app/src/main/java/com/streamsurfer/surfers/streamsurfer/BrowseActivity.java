@@ -30,11 +30,11 @@ public class BrowseActivity extends BaseActivity implements AdapterView.OnItemSe
         spinner.setOnItemSelectedListener(this);
 
         if (option.equals("genres")) {
-            results = entries.getGenreMap();
+            results = entries.getGenreMap(this);
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, entries.getGenreList());
             spinner.setAdapter(adapter);
         } else if (option.equals("services")) {
-            results = entries.getServiceMap();
+            results = entries.getServiceMap(this);
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, entries.getServiceList());
             spinner.setAdapter(adapter);
         }

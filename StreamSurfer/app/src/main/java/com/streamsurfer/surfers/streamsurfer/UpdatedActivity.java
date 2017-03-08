@@ -18,14 +18,14 @@ import java.util.Map;
 
 public class UpdatedActivity extends BaseActivity {
     private EntriesApp entries = EntriesApp.getInstance();
-    private Map<Date, Entry> updated = entries.getUpdated();
+    private Map<Date, Entry> updated;
     private List<Date> sorted = entries.getSortedList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updated);
-
+        updated = entries.getUpdated(this);
         ListView updatedList = (ListView) findViewById(R.id.updated_list);
 
         List<Entry> results = new ArrayList<>();

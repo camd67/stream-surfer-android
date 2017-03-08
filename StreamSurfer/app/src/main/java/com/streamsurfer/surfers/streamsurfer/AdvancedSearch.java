@@ -20,7 +20,7 @@ import java.util.Map;
 public class AdvancedSearch extends BaseActivity {
 
     private EntriesApp entries = EntriesApp.getInstance();
-    private Map<String, Entry> entryMap = entries.getEntries();
+    private Map<String, Entry> entryMap;
     public static final String GENRELIST = "genre";
     public static final String SERVICELIST = "service";
 
@@ -28,7 +28,7 @@ public class AdvancedSearch extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_search);
-
+        entryMap = entries.getEntries(this);
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );

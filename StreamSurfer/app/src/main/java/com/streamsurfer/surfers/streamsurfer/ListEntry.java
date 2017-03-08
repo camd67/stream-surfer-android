@@ -22,6 +22,7 @@ public class ListEntry {
         this.epsSeen = epsSeen;
         this.totalEps = totalEps;
         this.rating = rating;
+        this.filename = filename;
 
         if(status == ShowStatus.COMPLETE){
             this.epsSeen = this.totalEps;

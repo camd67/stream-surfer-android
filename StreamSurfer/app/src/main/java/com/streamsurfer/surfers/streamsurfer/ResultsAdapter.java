@@ -60,7 +60,7 @@ public class ResultsAdapter extends BaseAdapter {
         if(manager.listContainsTitle(resultLeft[position])){
             butl.setEnabled(false);
         } else {
-            final Entry selected = EntriesApp.getInstance().getEntries().get(resultLeft[position].toLowerCase());
+            final Entry selected = EntriesApp.getInstance().getEntries(context).get(resultLeft[position].toLowerCase());
             butl.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -80,7 +80,7 @@ public class ResultsAdapter extends BaseAdapter {
             if(manager.listContainsTitle(resultRight[position])){
                 butr.setEnabled(false);
             } else {
-                final Entry selected = EntriesApp.getInstance().getEntries().get(resultRight[position].toLowerCase());
+                final Entry selected = EntriesApp.getInstance().getEntries(context).get(resultRight[position].toLowerCase());
                 butr.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

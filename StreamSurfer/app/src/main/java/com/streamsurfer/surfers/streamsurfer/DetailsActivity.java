@@ -27,7 +27,7 @@ public class DetailsActivity extends BaseActivity {
         setContentView(R.layout.activity_details);
 
         String selectedString = getIntent().getStringExtra(ResultsActivity.SELECTED);
-        final Entry selected = entries.getEntries().get(selectedString.toLowerCase());
+        final Entry selected = entries.getEntries(this).get(selectedString.toLowerCase());
         final List<Service> serviceList = selected.getServices();
         int serviceSize = serviceList.size();
         String[] services = new String[serviceSize];
