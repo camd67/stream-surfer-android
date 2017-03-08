@@ -29,4 +29,9 @@
     <string name="my_list_watching">Watching (%1$d / %2$d)</string>
     <string name="my_list_rating">Rating: %1$d/%2$d</string>
     <string name="my_list_plan_to_watch">Plan to Watch</string>
+    <string name="your_rating">Your Rating</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete">Delete</string>
 </resources>
