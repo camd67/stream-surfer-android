@@ -75,10 +75,12 @@ public class BaseActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.search_icon:
-                Toast.makeText(this, "Searching...", Toast.LENGTH_SHORT).show();
+                Intent iSearch = new Intent(this, MainActivity.class);
+                startActivity(iSearch);
                 return true;
             case R.id.my_list_icon:
-                Toast.makeText(this, "My list", Toast.LENGTH_SHORT).show();
+                Intent iList = new Intent(this, MyListActivity.class);
+                startActivity(iList);
                 return true;
             default:
                 // keep this, we need it if we don't know how to handle it
