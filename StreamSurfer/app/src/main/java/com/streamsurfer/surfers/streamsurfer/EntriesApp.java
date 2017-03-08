@@ -13,6 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -88,7 +89,9 @@ public class EntriesApp extends android.app.Application {
     <T extends Comparable<? super T>> List<T> asSortedList(Collection<T> c) {
         List<T> list = new ArrayList<T>(c);
         java.util.Collections.sort(list);
-        return list;
+        List<T> shallowCopy = list.subList(0, list.size());
+        Collections.reverse(shallowCopy);
+        return shallowCopy;
     }
 
     private void createEntries() {
