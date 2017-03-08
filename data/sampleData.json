@@ -134,5 +134,104 @@
                 "thumbnail": "res/ep/naruto_s1_e2.png"
             }
         ]
+    },
+    {
+        "title": "Black Mirror",
+        "synonyms": ["Netflix Black Mirror"],
+        "synopsis": "A happy and positive look at the best qualities of modern human life",
+        "thumbnail": "res/sh/black_mirror.png",
+        "genre": [
+            "drama",
+            "British TV",
+            "dark"
+        ],
+        "tags": [
+            "TV"
+        ],
+        "services": [
+            {
+                "name": "Netflix",
+                "baseUrl": "https://www.netflix.com/title/70264888",
+                "icon": "res/ser/netflix.png"
+            }
+        ],
+        "episodes": [
+            {
+                "title": "The national anthem",
+                "episodeNumber": 1,
+                "seasonNumber": 1,
+                "releaseDate": "2012-11-04",
+                "length": 2640,
+                "synonyms": [],
+                "thumbnail": "res/ep/black_mirror_s1_e1.png"
+            },
+            {
+                "title": "15 Million merits",
+                "episodeNumber": 2,
+                "seasonNumber": 1,
+                "releaseDate": "2012-11-11",
+                "length": 3660,
+                "synonyms": [],
+                "thumbnail": "res/ep/black_mirror_s1_e2.png"
+            },
+            {
+                "title": "The entire history of you",
+                "episodeNumber": 3,
+                "seasonNumber": 1,
+                "releaseDate": "2012-11-18",
+                "length": 2880,
+                "synonyms": [],
+                "thumbnail": "res/ep/black_mirror_s1_e3.png"
+            },
+            {
+                "title": "Be right back",
+                "episodeNumber": 1,
+                "seasonNumber": 2,
+                "releaseDate": "2013-02-11",
+                "length": 2880,
+                "synonyms": [],
+                "thumbnail": "res/ep/black_mirror_s2_e1.png"
+            }
+        ]
+    },
+    {
+        "title": "Zootopia",
+        "synonyms": [],
+        "synopsis": "A rabbit police officer heads up an investigation of mysterious disappearances in zootopia with the aid of a sly fox",
+        "thumbnail": "res/sh/zootopia.png",
+        "genre": [
+            "family"
+        ],
+        "tags": [
+            "movie"
+        ],
+        "services": [
+            {
+                "name": "Netflix",
+                "baseUrl": "https://www.netflix.com/title/80079258",
+                "icon": "res/ser/netflix.png"
+            },
+            {
+                "name": "Google Play",
+                "baseUrl": "https://play.google.com/store/movies/details/Zootopia?id=d4WEUn0yS74",
+                "icon": "res/ser/googleplay.png"
+            },
+            {
+                "name": "YouTube",
+                "baseUrl": "https://www.youtube.com/watch?v=d4WEUn0yS74",
+                "icon": "res/ser/youtube.png"
+            }
+        ],
+        "episodes": [
+            {
+                "title": "Zootopia",
+                "episodeNumber": 1,
+                "seasonNumber": 1,
+                "releaseDate": "2012-11-04",
+                "length": 2640,
+                "synonyms": [],
+                "thumbnail": "res/ep/black_mirror_s1_e1.png"
+            }
+        ]
     }
 ]
