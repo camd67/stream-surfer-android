@@ -54,8 +54,10 @@ public class UpdatedAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        View rowView;
-        rowView = inflater.inflate(R.layout.updated_list, null);
+        View rowView = convertView;
+        if (rowView == null) {
+            rowView = inflater.inflate(R.layout.updated_list, null);
+        }
         TextView tvl = (TextView) rowView.findViewById(R.id.title_left);
         TextView tvr = (TextView) rowView.findViewById(R.id.title_right);
         ImageView imgl = (ImageView) rowView.findViewById(R.id.image_left);

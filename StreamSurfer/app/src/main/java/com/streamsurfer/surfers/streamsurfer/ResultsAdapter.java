@@ -18,6 +18,7 @@ public class ResultsAdapter extends BaseAdapter {
     private Context context;
     private int[] imageIdLeft;
     private int[] imageIdRight;
+    private MyListManager manager = null;
     private static LayoutInflater inflater = null;
 
     public ResultsAdapter(Context activity, String[] titlesLeft, String[] titlesRight, int[] imagesLeft, int[] imagesRight) {
@@ -26,6 +27,7 @@ public class ResultsAdapter extends BaseAdapter {
         context = activity;
         imageIdLeft = imagesLeft;
         imageIdRight = imagesRight;
+        manager = EntriesApp.getInstance().getMyListManager(activity);
         inflater = ( LayoutInflater )context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
     @Override
@@ -45,8 +47,10 @@ public class ResultsAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        View rowView;
-        rowView = inflater.inflate(R.layout.results_list, null);
+        View rowView = convertView;
+        if (rowView == null) {
+            rowView = inflater.inflate(R.layout.results_list, null);
+        }
         TextView tvl = (TextView) rowView.findViewById(R.id.title_left);
         TextView tvr = (TextView) rowView.findViewById(R.id.title_right);
         ImageView imgl = (ImageView) rowView.findViewById(R.id.image_left);
@@ -54,7 +58,6 @@ public class ResultsAdapter extends BaseAdapter {
         final Button butl = (Button) rowView.findViewById(R.id.button_add_to_list1);
         final Button butr = (Button) rowView.findViewById(R.id.button_add_to_list2);
 
-        final MyListManager manager = EntriesApp.getInstance().getMyListManager(context);
 
         // setup left always
         if(manager.listContainsTitle(resultLeft[position])){
