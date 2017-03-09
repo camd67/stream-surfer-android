@@ -136,6 +136,52 @@
         ]
     },
     {
+        "title": "SpongeBob",
+        "synonyms": [],
+        "synopsis": "Deep down in the Pacific Ocean in the subterranean city of Bikini Bottom lives a square yellow sponge named SpongeBob SquarePants. SpongeBob lives in a pineapple with his pet snail, Gary, loves his job as a fry cook at the Krusty Krab, and has a knack for getting into all kinds of trouble without really trying. When he's not getting on the nerves of his cranky next door neighbor Squidward, SpongeBob can usually be found smack in the middle of all sorts of strange situations with his best buddy, the simple yet lovable starfish, Patrick, or his thrill-seeking surfer-girl squirrel pal, Sandy Cheeks.",
+        "thumbnail": "res/sh/spongebob.png",
+        "genre": [
+            "comedy",
+            "family",
+            "dark"
+        ],
+        "tags": [
+            "TV"
+        ],
+        "services": [
+            {
+                "name": "Google Play",
+                "baseUrl": "https://play.google.com/store/tv/show?id=pe1MhA1cMBA&cdid=tvseason-enayuUEmH78&gdid=tvepisode-6o3QAZdMFNI",
+                "icon": "res/ser/googleplay.png"
+            },
+            {
+                "name": "YouTube",
+                "baseUrl": "https://www.youtube.com/watch?v=-xPc33o5hZ4",
+                "icon": "res/ser/youtube.png"
+            }
+        ],
+        "episodes": [
+            {
+                "title": "Help Wanted",
+                "episodeNumber": 1,
+                "seasonNumber": 1,
+                "releaseDate": "1999-05-01",
+                "length": 1380,
+                "synonyms": [],
+                "thumbnail": "res/ep/naruto_s1_e1.png"
+            },
+            {
+                "title": "Reef Blower",
+                "episodeNumber": 2,
+                "seasonNumber": 1,
+                "releaseDate": "1999-05-01",
+                "length": 1380,
+                "synonyms": [],
+                "thumbnail": "res/ep/naruto_s1_e2.png"
+            }
+        ]
+    },
+    {
         "title": "Black Mirror",
         "synonyms": ["Netflix Black Mirror"],
         "synopsis": "A happy and positive look at the best qualities of modern human life",
